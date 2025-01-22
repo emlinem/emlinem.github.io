@@ -3,47 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>UX/UI Designer Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Emily Nilsson</h1>
         <nav>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" class="active">About Me</a></li>
+                <li><a href="#work">Work</a></li>
             </ul>
         </nav>
+        <div class="profile-badge">WEB ENGINEER</div>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hi, I'm Emily, a passionate web designer and developer specializing in UX/UI and digital design.</p>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-card">
-            <h3>Project 1</h3>
-            <p>A responsive web app built with Next.js and TailwindCSS.</p>
+    <main>
+        <div class="hero">
+            <img src="profile-image.png" alt="Profile Image" class="profile">
+            <h1 class="title"><span>UX/UI</span> DESIGNER</h1>
+            <div class="tagline">
+                <p>Yes, that's me!</p>
+                <div class="arrow"></div>
+            </div>
+            <div class="contact-button">
+                <p>LET'S TALK</p>
+                <div class="circle">
+                    <span>&rarr;</span>
+                </div>
+            </div>
         </div>
-        <div class="project-card">
-            <h3>Project 2</h3>
-            <p>An interactive design project created with Figma.</p>
-        </div>
-    </section>
+    </main>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email me at <a href="mailto:emily@example.com">emily@example.com</a></p>
-    </section>
-
-    <footer>
-        <p>© 2024 Emily Nilsson. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>

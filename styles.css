@@ -1,50 +1,118 @@
+/* General styles */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #f4f4f4;
+    font-family: Arial, sans-serif;
+    background-color: #c4a2f5;
     color: #333;
 }
 
 header {
-    background: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
 }
 
 nav ul {
     list-style: none;
+    margin: 0;
     padding: 0;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 20px;
+    margin-right: 20px;
 }
 
 nav ul li a {
-    color: white;
     text-decoration: none;
+    color: black;
+    font-weight: bold;
 }
 
-section {
-    padding: 50px;
-    text-align: center;
+nav ul li a.active {
+    color: red;
 }
 
-.project-card {
-    background: white;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-}
-
-footer {
-    background: #333;
+.profile-badge {
+    background: #57c4d1;
     color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Hero section */
+.hero {
+    position: relative;
+    width: 80%;
+    margin: 50px auto;
     text-align: center;
-    padding: 20px;
+}
+
+.profile {
+    width: 300px;
+    border-radius: 50%;
+    filter: grayscale(100%);
+}
+
+.title {
+    font-size: 60px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #222;
+    line-height: 1.2;
+    position: relative;
+}
+
+.title span {
+    display: block;
+    font-size: 40px;
+    color: #6a40d5;
+}
+
+.tagline {
+    position: absolute;
+    left: 10%;
+    top: 40%;
+    font-style: italic;
+    font-size: 18px;
+}
+
+.arrow {
+    width: 50px;
+    height: 2px;
+    background: #6a40d5;
+    position: relative;
+    margin-top: 10px;
+}
+
+.contact-button {
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
+    background: #6a40d5;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-button .circle {
+    background: #e85a71;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-button .circle span {
+    font-size: 20px;
 }
