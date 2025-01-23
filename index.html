@@ -3,36 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UX/UI Designer Portfolio</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
+        <div class="logo">JG</div>
         <nav>
             <ul>
-                <li><a href="#about" class="active">About Me</a></li>
-                <li><a href="#work">Work</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <div class="profile-badge">WEB ENGINEER</div>
     </header>
 
-    <main>
-        <div class="hero">
-            <img src="profile-image.png" alt="Profile Image" class="profile">
-            <h1 class="title"><span>UX/UI</span> DESIGNER</h1>
-            <div class="tagline">
-                <p>Yes, that's me!</p>
-                <div class="arrow"></div>
+    <section class="hero">
+        <div class="content">
+            <h1>creative designer <br> & developer.</h1>
+            <p>Hi I'm Julius Guevarra, a passionate Front-end Developer & UI/UX Designer based in the Philippines.</p>
+            <a href="#works" class="cta-btn">SEE MY WORKS →</a>
+        </div>
+        <div class="hero-image">
+            <img src="bust-image.png" alt="Bust Image">
+        </div>
+    </section>
+
+    <section class="projects" id="works">
+        <h2>Crafted with love.</h2>
+        <p>These are a selection of my recent works.</p>
+        <div class="project-list">
+            <div class="project">
+                <h3>01 booz player</h3>
+                <p>UI / UX</p>
+                <a href="#" class="view-btn">VIEW PROJECT →</a>
             </div>
-            <div class="contact-button">
-                <p>LET'S TALK</p>
-                <div class="circle">
-                    <span>&rarr;</span>
-                </div>
+            <div class="project">
+                <h3>02 movx movie browser</h3>
+                <p>WEB APP</p>
+                <a href="#" class="view-btn">VIEW PROJECT →</a>
             </div>
         </div>
-    </main>
+    </section>
 
+    <footer>
+        <p>© 2025 Julius Guevarra</p>
+        <div class="social-links">
+            <a href="#">Dribble</a>
+            <a href="#">Behance</a>
+            <a href="#">GitHub</a>
+        </div>
+    </footer>
 </body>
 </html>
