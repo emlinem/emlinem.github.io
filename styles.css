@@ -3,9 +3,11 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #f9f9f9;
+    background: url('5dececaaf4488c5a094720e13660c61f.jpg') no-repeat center center fixed; 
+    background-size: cover;
     color: #333;
 }
+
 
 /* Header */
 header {
@@ -44,7 +46,7 @@ nav ul li a {
     justify-content: space-between;
     align-items: center;
     padding: 100px 50px;
-    background: #f4f4f4;
+
 }
 
 .content h1 {
@@ -71,10 +73,9 @@ nav ul li a {
 
 .hero-image img {
     width: 400px;
-    filter: grayscale(100%);
 }
 
-/* Projects Section */
+/* Project Section */
 .projects {
     padding: 80px 50px;
     text-align: center;
@@ -83,38 +84,155 @@ nav ul li a {
 .projects h2 {
     font-size: 48px;
     font-weight: bold;
+    color: #fff;
 }
 
+/* Project Grid Layout */
 .project-list {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 30px;
     margin-top: 50px;
+    justify-content: center;
 }
 
+/* Project Card */
 .project {
-    background: #f0f0f0;
-    padding: 30px;
-    border-radius: 10px;
-    width: 45%;
-    text-align: left;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 300px; /* Fixed height */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.35); /* Transparent frosted effect */
+    backdrop-filter: blur(15px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Project Image */
+.project img {
+    height: 50%;
+    object-fit:fill;
+    padding:10px;
+}
+
+/* Project Content */
+.project-content {
+    padding: 15px; /* Reduce overall padding */
+    text-align: center;
+    color: #000;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .project h3 {
-    font-size: 32px;
+    font-size: 28px;
+    margin: 5px 0 5px 0;
     font-weight: bold;
-    color: #333;
 }
 
 .project p {
-    color: #666;
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.8);
 }
 
-.view-btn {
-    display: inline-block;
-    margin-top: 10px;
-    color: #000;
+/* Hover Effects */
+.project:hover {
+    transform: translateY(-5px); /* Lift the card slightly */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* My Works Section */
+.my-works-section {
+    padding: 100px 50px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.my-works-section h1 {
+    font-size: 64px;
     font-weight: bold;
+    color: #fff;
+    margin: 0;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Works List */
+.works-list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.work-item {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 250px; /* Fixed height */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.35); /* Transparent frosted effect */
+    backdrop-filter: blur(15px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
     text-decoration: none;
+}
+
+.work-item img {
+    height: 80%;
+    object-fit:cover;
+    padding:50px;
+}
+
+.work-content {
+    padding: 30px;
+    text-align: left;
+}
+
+.work-content h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+    color: #000;
+}
+
+.work-content p {
+    font-size: 18px;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Tech Stack */
+.tech-stack {
+    margin-top: 15px;
+}
+
+.tech-stack span {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 50px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+/* Hover Effect */
+.work-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer */
