@@ -1,0 +1,74 @@
+.typography {
+    margin: 0;
+    padding: 0;
+}
+
+/* Text types */
+.typography.hero {
+    font-size: 55px;
+    font-weight: bold;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.typography.h1 {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.typography.h2 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.typography.h3 {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.typography.h4 {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.typography.p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.typography.p2 {
+    font-size: 14px;
+    text-align: left;
+}
+
+.typography.date {
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* Color options */
+.typography.primary {
+    color: #333;
+}
+
+.typography.secondary {
+    color: #666;
+}
+
+.typography.tertiary {
+    color: #888;
+}
+
+.typography.white {
+    color: #fff;
+}
+
+.typography.black {
+    color: #000;
+}

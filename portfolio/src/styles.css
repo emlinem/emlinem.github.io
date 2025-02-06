@@ -35,69 +35,12 @@ p {
     margin-top: 10px;
 }
 
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between; /* Space out logo and navigation */
-    align-items: center;
-    padding: 20px 80px; /* Adjust padding to match desired spacing */
-    background: #fff; /* Ensure background consistency */
-    flex-direction: row;
-    width: 100vw; /* Ensure it covers full viewport width */
-    max-width: 100%; /* Prevent any overflow */
-}
-
-.logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
-}
-
-/* Navigation */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* Arrange items in a row */
-    gap: 40px; /* Space between nav items */
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    font-size: 20px; /* Increase font size */
-}
-
-/* Remove link hover underline */
-nav ul li a:hover {
-    text-decoration: none;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    nav ul {
-        flex-direction: column;
-        gap: 20px;
-    }
-}
-
 /* Hero Section */
 .hero {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 100px 50px;
-
 }
 
 .content h1 {
@@ -121,11 +64,13 @@ nav ul li a:hover {
     font-weight: bold;
     border-radius: 50px;
     transition: all 0.4s ease-in-out;
+    width: 210px;
 }
 
 .cta-btn:hover{
     background: #fff;
     color: #444;
+    border: none;
 }
 
 .hero-image img {
@@ -385,6 +330,80 @@ nav ul li a:hover {
 .send-message-btn:hover .arrow {
     color: #fff;
     transform: translateX(5px);
+}
+
+/* Masonry Layout */
+.graphics-container {
+    padding: 50px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.graphics-container h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.masonry-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.masonry-item {
+    position: relative;
+    width: calc(33.333% - 20px); /* 3 columns */
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.masonry-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Hover Overlay */
+.masonry-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    padding: 20px;
+}
+
+.masonry-item .overlay h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.masonry-item .overlay p {
+    margin: 10px 0 0;
+    font-size: 16px;
+    color: #ccc;
+}
+
+.masonry-item:hover .overlay {
+    opacity: 1;
+}
+
+.masonry-item:hover {
+    transform: scale(1.05);
 }
 
 

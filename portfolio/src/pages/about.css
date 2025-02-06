@@ -1,0 +1,25 @@
+.about {
+    padding: 60px 20px;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 40px; /* Space between columns */
+    align-items: start;
+}
+
+/* Section Item Styling */
+.item {
+    padding-bottom: 25px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        gap: 20px;
+    }
+}

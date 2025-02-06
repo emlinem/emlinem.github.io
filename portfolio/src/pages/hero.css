@@ -1,0 +1,24 @@
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 100px 50px;
+}
+
+/* Ensure content is left-aligned */
+.content {
+    width: 60%; /* Adjust width to prevent overflow */
+}
+
+.herocontent {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+/* Styling for image */
+.hero-image img {
+    width: 400px;
+    border-radius: 50%;
+}
