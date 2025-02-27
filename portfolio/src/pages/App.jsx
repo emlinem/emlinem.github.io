@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles.css';
 import Header from './header';
 import Hero from './Hero';
-import Footer from '../components/Footer';
+import Contact from './Contact';
 import Graphics from './graphics';
 import Projects from './projects';
 import About from './about';
@@ -16,7 +16,7 @@ function App() {
             <About />
             <Graphics />
             <Projects />
-            <Footer />
+            <Contact />
         </Router>
     );
 }

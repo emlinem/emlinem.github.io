@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Typography from '../components/Typography';
 import '../components/Typography.css';
 
@@ -8,15 +8,27 @@ import graphicsData from './graphicsData';
 
 function Graphics() {
     const [selectedProject, setSelectedProject] = useState(null);
+    const [isClosing, setIsClosing] = useState(false);
+    const [scrollPosition, setScrollPosition] = useState(0);
 
+    // Store scroll position before opening the popup
     const handleCardClick = (project) => {
+        setScrollPosition(window.scrollY);
         setSelectedProject(project);
+        document.body.classList.add("no-scroll");
     };
 
+    // Smoothly close popup
     const closePopup = () => {
-        setSelectedProject(null);
+        setIsClosing(true);
+        setTimeout(() => {
+            setSelectedProject(null);
+            setIsClosing(false);
+            document.body.classList.remove("no-scroll");
+            window.scrollTo(0, scrollPosition);
+        }, 300); // Match transition duration
     };
-
+        
     return (
         <section id="graphics" className="work-section">
             <Typography type="h2" color="primary">Graphics Projects</Typography>  {/* Using Typography for section heading */}
@@ -59,7 +71,7 @@ function Graphics() {
             {/* Popup for selected project */}
             {selectedProject && (
                 <div className="popup-overlay" onClick={closePopup}>
-                    <div className="popup" onClick={(e) => e.stopPropagation()}>
+                    <div className="popup-content" onClick={(e) => e.stopPropagation()}>
                         <button className="close-btn" onClick={closePopup}>×</button>
 
                         <div className="popup-left">
