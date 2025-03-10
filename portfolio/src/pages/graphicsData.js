@@ -30,6 +30,28 @@ const graphicsData = [
     {
         id: 3,
         img: OrbitImg,
+        name: 'Orbit Poster',
+        date: 'June 2022',
+        description: ':))))',
+        details: 'Marketing material created for Kollin campaign.',
+        tools: ['Canva', 'Illustrator'],
+        links: [],
+        extraImages: [OrbitImg]
+    },
+    {
+        id: 4,
+        img: OrbitImg,
+        name: 'Orbit Poster',
+        date: 'June 2022',
+        description: ':))))',
+        details: 'Marketing material created for Kollin campaign.',
+        tools: ['Canva', 'Illustrator'],
+        links: [],
+        extraImages: [OrbitImg]
+    },
+    {
+        id: 5,
+        img: OrbitImg,
         name: 'Kollin Poster',
         date: 'June 2022',
         description: ':))))',
