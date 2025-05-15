@@ -6,7 +6,7 @@
 .name-year {
   font-size: 18px;
   font-weight: bold;
-  color: #0d1743;
+  color: #282828;
   margin-bottom: 10px;
 }
 
@@ -18,22 +18,22 @@
 
 .social-icons a {
   font-size: 24px;
-  color: #0d1743;
+  color: #282828;
   transition: color 0.2s ease-in-out;
 }
 
 .social-icons a:hover {
-  color: #41476b;
+  color: #193497;
 }
 
 .email-link {
   display: inline-block;
   font-size: 14px;
-  color: #0d1743;
+  color: #282828;
   text-decoration: underline;
   transition: color 0.2s ease-in-out;
 }
 
 .email-link:hover {
-  color: #1a296d;
+  color: #193497;
 }

@@ -31,7 +31,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: #282828;
     font-weight: bold;
     font-size: 20px;
     width: 100%;
@@ -39,7 +39,7 @@ nav ul li a {
 
 nav ul li a:hover {
     text-decoration: none;
-    color: #000;
+    color: #193497;
     transition: ease-in-out 0.2s ;
 }
 

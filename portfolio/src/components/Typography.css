@@ -54,21 +54,21 @@
 
 /* Color options */
 .typography.primary {
-    color: #333;
+    color: #282828;
 }
 
 .typography.secondary {
-    color: #666;
+    color: #193497;
 }
 
 .typography.tertiary {
-    color: #888;
+    color: #eda398;
 }
 
 .typography.white {
-    color: #fff;
+    color: #f9f6ef;
 }
 
 .typography.black {
-    color: #000;
+    color: #282828;
 }

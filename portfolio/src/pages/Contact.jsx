@@ -6,7 +6,7 @@ export default function Contact() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <section className="simple-contact">
+    <section id="contact" className="simple-contact">
       <h2 className="name-year">Emily Nilsson, {currentYear}</h2>
 
       <div className="social-icons">
