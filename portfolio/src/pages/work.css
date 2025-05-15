@@ -1,178 +1,202 @@
+/* work.css */
+
+/* --- Grid & Section --- */
 .work-section {
-    padding: 60px 20px;
-    width: 95%;
-    margin: 0 auto;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-
 .work-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: start;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
 }
 
-/* Card container */
 .work-card-container {
-    display: flex;
-    flex-direction: column;
-    width: calc(25% - 30px);
-    box-sizing: border-box;
-    transition: width 0.3s ease, height 0.3s ease, border 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow 0.1s ease;
+  cursor: pointer;
 }
 
-.work-card-container.expanded {
-    width: 100%;
-    height: auto;
+.work-card-container:hover {
+    transform: scale(1.02);
+    transition: ease-in-out 0.3s;
 }
 
-/* Work Card Styling */
+/* --- The Image --- */
 .work-card {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 200px;
-    cursor: pointer;
-    background-color: #f9f9f9;
-    object-position: top;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  width: 100%;
+  aspect-ratio: 4/3;      /* uniform height */
+  overflow: hidden;
+  flex-shrink: 0;
 }
-
-/* Ensure the image fills the card */
 .work-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-    transition: transform 0.3s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position:top;
+  display: block;
 }
 
-/* Overlay Effect */
-.work-card::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(3px);
-    opacity: 0;
-    transition: opacity 0.5s ease;
+.work-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 
-/* Overlay text */
-.work-card .overlay-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+/* --- Info sits BELOW the image, not on top --- */
+.card-info {
+  position: relative;
+  transform: none;
+  bottom: auto;
+  left: auto;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
-.work-card .overlay-content h3 {
-    font-size: 22px;
-    font-weight: bold;
+/* --- Typography in the info block --- */
+.card-info h3 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+}
+.card-info .date {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+.card-info p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 16px;
+  flex-grow: 1;
 }
 
-/* Show overlay on hover */
-.work-card:hover::after,
-.work-card:hover .overlay-content,
-.work-card-container.expanded .work-card::after,
-.work-card-container.expanded .overlay-content {
-    opacity: 1;
-}
-
-.work-card:hover,
-.work-card-container.expanded .work-card {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05);
-}
-
-/* Expanded Content Styling */
-.expanded-content {
-    padding: 20px;
-    margin-top: 10px;
-}
-
-.expanded-images {
-    margin-top: 20px;
-}
-
-.expanded-images .main-image {
-    width: 100%;
-    max-height: 300px; /* Reduce the max height */
-    border-radius: 10px;
-    object-fit: contain;
-}
-
-.expanded-images .small-images {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 10px;
-}
-
-.expanded-images .small-images img {
-    width: calc(33.333% - 10px);
-    max-height: 150px; /* Reduce the max height */
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    object-fit: cover;
-}
-
-/* Tools section spacing fix */
-.tools-title {
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-.tool-tag {
-    display: inline-block;
-    padding: 8px 15px;
-    background: transparent;
-    border: 2px solid #333;
-    border-radius: 25px;
-    margin-right: 10px;
-    font-weight: bold;
-}
-
-.tools-container,
+/* --- Footer links --- */
 .card-links {
-    margin-top: 20px;
+  display: flex;
+  gap: 12px;
 }
-
 .card-link {
-    display: inline-block;
-    color: #333;
-    text-decoration: underline;
-    font-weight: bold;
-    margin-bottom: 5px;
-    transition: color 0.3s ease;
+  font-size: 0.9rem;
+  color: #0070f3;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.2s ease;
 }
-
-.card-link:hover {
-    color: #000;
-}
-
 .card-link .arrow {
-    font-weight: normal;
-    font-size: 18px;
-    margin-left: 4px;
-    text-decoration: none;
+  margin-left: 4px;
+}
+.card-link:hover {
+  transform: translateX(3px);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .work-card-container {
-        width: 100%;
-    }
+/* ---------- OVERLAY ---------- */
+.popup-overlay {
+  position: fixed;
+  inset: 0; /* top/right/bottom/left 0 */
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+  animation: fadeInOverlay 0.3s ease;
+}
+@keyframes fadeInOverlay {
+  from { background: rgba(0, 0, 0, 0) }
+  to   { background: rgba(0, 0, 0, 0.6) }
+}
 
-    .expanded-images .small-images img {
-        width: 100%;
-    }
+/* ---------- POPUP BOX ---------- */
+.popup-content {
+  background: #fff;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+  animation: fadeInContent 0.3s ease;
+}
+@keyframes fadeInContent {
+  from { transform: translateY(20px); opacity: 0 }
+  to   { transform: translateY(0);     opacity: 1 }
+}
+
+/* Wraps the two columns */
+.popup-inner {
+  display: flex;
+  height: 100%;
+}
+
+/* Close button in top‐right corner */
+.close-btn {
+  position: absolute;
+  top: 55px;
+  right: 96px;
+  font-size: 1.8rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  padding: 4px;
+  line-height: 1;
+  z-index: 1;
+}
+
+/* ---------- LEFT: LARGE IMAGE ---------- */
+.popup-main-image {
+  flex: 1 1 60%;
+  object-fit: contain;
+  max-height: 90vh;
+  background: #fff; /* dark background behind the image if it's narrower */
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+
+/* ---------- RIGHT: DETAILS ---------- */
+.popup-details {
+  flex: 1 1 40%;
+  padding: 32px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Make the details scroll if they overflow */
+.popup-details::-webkit-scrollbar {
+  width: 6px;
+}
+.popup-details::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+}
+
+/* Tweak your Typography inside here if needed */
+.popup-details h2,
+.popup-details .date,
+.popup-details p,
+.popup-details .tools-container,
+.popup-details .popup-small-images {
+  margin-bottom: 20px;
+}
+
+/* Tools tags inline */
+.tools-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Extra small images row */
+.popup-small-images {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.popup-small-images img {
+  width: calc(50% - 5px);
+  object-fit: cover;
 }
