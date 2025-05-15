@@ -1,135 +1,39 @@
-/* General Contact Section Styling */
-.contact-section {
-    width: 100%;
-    background-color: #d8d5e1; /* Soft purple background */
-    padding: 80px 5%;
-    display: flex;
-    justify-content: center;
+.simple-contact {
+  text-align: center;
+  padding: 40px 20px;
 }
 
-/* Contact Container */
-.contact-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1200px;
-    width: 100%;
+.name-year {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0d1743;
+  margin-bottom: 10px;
 }
 
-/* Left Side: Contact Info */
-.contact-info {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.icon {
-    font-size: 32px;
+.social-icons a {
+  font-size: 24px;
+  color: #0d1743;
+  transition: color 0.2s ease-in-out;
 }
 
-.contact-info h2 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #0d1743; /* Dark blue */
+.social-icons a:hover {
+  color: #41476b;
 }
 
-.contact-email {
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: underline;
-    color: #0d1743;
+.email-link {
+  display: inline-block;
+  font-size: 14px;
+  color: #0d1743;
+  text-decoration: underline;
+  transition: color 0.2s ease-in-out;
 }
 
-.contact-email:hover {
-    color: #1a296d; /* Slightly darker on hover */
-}
-
-/* Right Side: Contact Form */
-.contact-form {
-    width: 50%;
-}
-
-.contact-form h2 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #0d1743;
-    margin-bottom: 20px;
-}
-
-/* Form Styling */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.form-row {
-    display: flex;
-    gap: 20px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-label {
-    font-size: 16px;
-    color: #0d1743;
-    margin-bottom: 5px;
-}
-
-input,
-textarea {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-bottom: 2px solid #0d1743;
-    background: transparent;
-    font-size: 16px;
-    outline: none;
-    color: #0d1743;
-}
-
-textarea {
-    min-height: 100px;
-    resize: none;
-}
-
-/* Submit Button */
-.submit-btn {
-    width: 150px;
-    padding: 12px;
-    background-color: #41476b; /* Muted dark blue */
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-}
-
-.submit-btn:hover {
-    background-color: #2a304f;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .contact-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .contact-info,
-    .contact-form {
-        width: 100%;
-    }
-
-    .form-row {
-        flex-direction: column;
-    }
+.email-link:hover {
+  color: #1a296d;
 }
