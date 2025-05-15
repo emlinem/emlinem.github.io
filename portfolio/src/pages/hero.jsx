@@ -9,7 +9,7 @@ const Hero = () => {
         <section className="hero">
             <div className="content">
                 <div className='herocontent'>
-                <Typography type="hero" color="primary">
+                <Typography type="hero" color="secondary">
                     creative designer & developer.
                 </Typography>
                 <Typography type="p" color="primary">
