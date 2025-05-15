@@ -13,13 +13,13 @@ function About() {
                     <Typography type="h2" color="primary">Education</Typography> 
 
                     <div className="item">
-                        <Typography type="h4" color="primary">Masters's in Interactive Media Technology</Typography> 
+                        <Typography type="h4" color="primary">Masters in Interactive Media Technology</Typography> 
                         <Typography type="date" color="primary">2022 - Present</Typography>
                         <Typography type="p" color="primary">Human Computer Interaction with a focus on UX & UI.</Typography> 
                     </div>
 
                     <div className="item">
-                        <Typography type="h4" color="primary">Bachelor's in Media Technology</Typography> 
+                        <Typography type="h4" color="primary">Bachelors in Media Technology</Typography> 
                         <Typography type="date" color="primary">2019 - 2022</Typography>
                         <Typography type="p" color="primary">Relevant courses in UX/UI Design and Web Development</Typography>
                     </div>
