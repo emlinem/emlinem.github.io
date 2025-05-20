@@ -23,7 +23,7 @@ export default function Graphics() {
   return (
     <section id="graphics" className="work-section">
       <Typography type="h2" color="primary">
-        Graphics
+        Graphic Design work
       </Typography>
 
       <div className="work-grid">

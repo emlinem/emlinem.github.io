@@ -23,7 +23,7 @@ export default function Projects() {
   return (
     <section id="projects" className="work-section">
       <Typography type="h2" color="primary">
-        Projects
+        UX and Web design
       </Typography>
 
       <div className="work-grid">
