@@ -1,4 +1,4 @@
-
+// src/sections/Graphics.jsx
 import React, { useState } from 'react';
 import Typography from '../components/Typography';
 import './work.css';
@@ -7,10 +7,12 @@ import graphicsData from './graphicsData';
 export default function Graphics() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [carouselIndex, setCarouselIndex] = useState(0);
 
   const handleCardClick = (project) => {
     setScrollPosition(window.scrollY);
     setSelectedProject(project);
+    setCarouselIndex(0);
     document.body.classList.add('no-scroll');
   };
 
@@ -33,12 +35,9 @@ export default function Graphics() {
             className="work-card-container"
             onClick={() => handleCardClick(work)}
           >
-            {/* Image */}
             <div className="work-card">
               <img src={work.img} alt={work.name} />
             </div>
-
-            {/* Always‐visible info below */}
             <div className="card-info">
               {work.name && (
                 <Typography type="h4" color="primary">
@@ -50,57 +49,77 @@ export default function Graphics() {
                   {work.description}
                 </Typography>
               )}
-
-              {/* Footer: “Read more” and share icon */}
-              <div className="card-links">
-                {work.links[0] && (
-                  <a
-                    href={work.links[0]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="card-link read-more"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <Typography type="p2" color="primary">
-                      Read more <span className="arrow">→</span>
-                    </Typography>
-                  </a>
-                )}
-                <a
-                  href="#"
-                  className="card-link share"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    // your share logic here
-                  }}
-                >
-                </a>
-              </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Popup Overlay */}
       {selectedProject && (
         <div className="popup-overlay" onClick={closePopup}>
           <div
             className="popup-content"
             onClick={(e) => e.stopPropagation()}
           >
+            <button className="close-btn" onClick={closePopup}>
+              ×
+            </button>
+
             <div className="popup-inner">
-              <button className="close-btn" onClick={closePopup}>
-                ×
-              </button>
+              {/* LEFT: Carousel */}
+              <div className="carousel-container">
+                <button
+                  className="carousel-btn prev"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    const count = 1 + (selectedProject.extraImages?.length || 0);
+                    setCarouselIndex(i => (i - 1 + count) % count);
+                  }}
+                >
+                  ‹
+                </button>
 
-              {/* Left: Large image */}
-              <img
-                className="popup-main-image"
-                src={selectedProject.img}
-                alt={selectedProject.name}
-              />
+                {(() => {
+                  const slides = [
+                    selectedProject.img,
+                    ...(selectedProject.extraImages || []),
+                  ];
+                  return (
+                    <>
+                      <img
+                        key={carouselIndex}                     // ← force remount per slide
+                        className="carousel-image"
+                        src={slides[carouselIndex]}
+                        alt={`${selectedProject.name} slide ${carouselIndex + 1}`}
+                      />
+                      <div className="carousel-indicators">
+                        {slides.map((_, idx) => (
+                          <span
+                            key={idx}
+                            className={idx === carouselIndex ? 'dot active' : 'dot'}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setCarouselIndex(idx);
+                            }}
+                          />
+                        ))}
+                      </div>
+                    </>
+                  );
+                })()}
 
-              {/* Right: Details */}
+                <button
+                  className="carousel-btn next"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    const count = 1 + (selectedProject.extraImages?.length || 0);
+                    setCarouselIndex(i => (i + 1) % count);
+                  }}
+                >
+                  ›
+                </button>
+              </div>
+
+              {/* RIGHT: Details */}
               <div className="popup-details">
                 <Typography type="h2" color="primary">
                   {selectedProject.name}
@@ -131,10 +150,20 @@ export default function Graphics() {
                   </>
                 )}
 
-                {selectedProject.extraImages?.length > 0 && (
-                  <div className="popup-small-images">
-                    {selectedProject.extraImages.map((src, idx) => (
-                      <img key={idx} src={src} alt="" />
+                {selectedProject.links?.length > 0 && (
+                  <div className="popup-links">
+                    {selectedProject.links.map((url, idx) => (
+                      <a
+                        key={idx}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="card-link"
+                      >
+                        <Typography type="p2" color="primary">
+                          {selectedProject.linkname[idx]} <span className="arrow">→</span>
+                        </Typography>
+                      </a>
                     ))}
                   </div>
                 )}
