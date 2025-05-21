@@ -42,7 +42,7 @@ const projectsData = [
         description: 'Jeoparty! is an online version of the classic game Jeopardy, but with a twist: all questions are generated with AI.',
         details: 'Jeoparty! is an online version of the classic game Jeopardy, but with a twist: all questions are generated with AI. This project was made for the course DH2643 at KTH, by Emily Nilsson, Patrik Larsson, Olle Sköld and Felicia Atterling.',
         tools: ['Typescript','JavaScript','CSS'],
-        linkname: [],
+        linkname: ['Take a look at our GitHub!'],
         links: ['https://github.com/feliciaatterling/jeoparty?tab=readme-ov-file'],
         extraImages: [Jeoparty,Jeoparty2,Jeoparty3]
     },
@@ -54,7 +54,7 @@ const projectsData = [
         description: 'Redesign of frontpage of kollin.io',
         details: '',
         tools: ['Figma'],
-        linkname: [],
+        linkname: ['Check out the Figma!'],
         links: ['https://www.figma.com/proto/dltqbG30XABFIoCsboioTT/Portfolio?node-id=1294-160&p=f&t=wzV7Sw7eGUxEucn3-0&scaling=scale-down&content-scaling=fixed&page-id=1294%3A160&starting-point-node-id=1310%3A119092'],
         extraImages: []
     },
@@ -66,7 +66,7 @@ const projectsData = [
         description: 'Restructuring and redesigning kollin.io resource page.',
         details: '',
         tools: ['Figma'],
-        linkname: [],
+        linkname: ['Take a peek at the design!'],
         links: ['https://www.figma.com/proto/dltqbG30XABFIoCsboioTT/Kollin-Redesign?node-id=1310-121738&p=f&t=wzV7Sw7eGUxEucn3-0&scaling=scale-down&content-scaling=fixed&page-id=1294%3A160&starting-point-node-id=1310%3A121738&show-proto-sidebar=1'],
         extraImages: []
     },
@@ -78,7 +78,7 @@ const projectsData = [
         description: 'Spotify design challenge: Integrating AI music recommendations.',
         details: '',
         tools: ['Figma'],
-        linkname: [],
+        linkname: ['Test it out!'],
         links: ['https://www.figma.com/proto/zRSS69GUvBn9NIn89WjxOz/Project-Challenges?type=design&node-id=2-13&t=4dKH1kCwHX5j0Sbj-0&scaling=scale-down&page-id=0%253A1&starting-point-node-id=2%253A13&show-proto-sidebar=1'],
         extraImages: [Ambiance2]
     },
@@ -90,7 +90,7 @@ const projectsData = [
         description: 'Productivity app design',
         details: '',
         tools: ['Figma'],
-        linkname: [],
+        linkname: ['Check out the prototype!'],
         links: ['https://www.figma.com/proto/KYd6CsAOHDItDkD35014pv/Personal-Project-first-version---Emily---Fanny?t=ZyBYR6Lix9pOgV0O-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=1-2&starting-point-node-id=1%3A2'],
         extraImages: []
     },
@@ -114,7 +114,7 @@ const projectsData = [
         description: 'Blast Theory design challenge: Bringing attention to underrepresented groups.',
         details: '',
         tools: ['Figma'],
-        linkname: [],
+        linkname: ['Take a look!'],
         links: ['https://www.figma.com/proto/zRSS69GUvBn9NIn89WjxOz/Project-Challenges?type=design&node-id=2-13&t=4dKH1kCwHX5j0Sbj-0&scaling=scale-down&page-id=0%253A1&starting-point-node-id=2%253A13&show-proto-sidebar=1'],
         extraImages: [TimeLens2]
     },
