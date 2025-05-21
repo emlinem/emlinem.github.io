@@ -1,3 +1,5 @@
+import Portfolio from '../assets/projects_folder/Portfolio.png';
+
 import JeopartyMockup from '../assets/projects_folder/JeopartyMockup.png';
 import Jeoparty from '../assets/projects_folder/Jeoparty.png';
 import Jeoparty2 from '../assets/projects_folder/Jeoparty2.png';
@@ -22,6 +24,18 @@ import Weekbox2 from '../assets/projects_folder/Weekbox2.png';
 const projectsData = [
     {
         id: 1,
+        img: Portfolio,
+        name: 'My Portfolio!',
+        date: '2025',
+        description: 'I designed and created this website!',
+        details: 'My portfolio website is a project I have had throughout the spring semester, alongside my Masters Thesis.',
+        tools: ['JavaScript','CSS', 'HTML'],
+        linkname: [],
+        links: ['https://github.com/emlinem/emlinem.github.io'],
+        extraImages: []
+    },
+    {
+        id: 2,
         img: JeopartyMockup,
         name: 'JeoPARTY!',
         date: '2024',
@@ -33,7 +47,7 @@ const projectsData = [
         extraImages: [Jeoparty,Jeoparty2,Jeoparty3]
     },
     {
-        id: 2,
+        id: 3,
         img: KollinMockup,
         name: 'Kollin Frontpage Redesign',
         date: '2024',
@@ -45,7 +59,7 @@ const projectsData = [
         extraImages: []
     },
     {
-        id: 3,
+        id: 4,
         img: KollinMockup2,
         name: 'Kollin Resource Page Re-design',
         date: '2024',
@@ -57,7 +71,7 @@ const projectsData = [
         extraImages: []
     },
     {
-        id: 4,
+        id: 5,
         img: Ambiance,
         name: 'Ambiance',
         date: '2023',
@@ -69,7 +83,7 @@ const projectsData = [
         extraImages: [Ambiance2]
     },
     {
-        id: 5,
+        id: 6,
         img: Flow,
         name: 'FLOW',
         date: '2024',
@@ -81,7 +95,7 @@ const projectsData = [
         extraImages: []
     },
     {
-        id: 6,
+        id: 7,
         img: Consent,
         name: 'Consent',
         date: '2023',
@@ -93,7 +107,7 @@ const projectsData = [
         extraImages: [Consent2]
     },
     {
-        id: 7,
+        id: 8,
         img: TimeLens,
         name: 'TimeLens',
         date: '2023',
@@ -104,18 +118,6 @@ const projectsData = [
         links: ['https://www.figma.com/proto/zRSS69GUvBn9NIn89WjxOz/Project-Challenges?type=design&node-id=2-13&t=4dKH1kCwHX5j0Sbj-0&scaling=scale-down&page-id=0%253A1&starting-point-node-id=2%253A13&show-proto-sidebar=1'],
         extraImages: [TimeLens2]
     },
-    {
-        id: 8,
-        img: Weekbox,
-        name: 'Weekbox',
-        date: '2022',
-        description: 'Designing for human interaction in a hybrid world.',
-        details: '',
-        tools: ['Figma', 'Photoshop'],
-        linkname: [],
-        links: [''],
-        extraImages: [Weekbox2]
-    }
 ];
 
 export default projectsData;
