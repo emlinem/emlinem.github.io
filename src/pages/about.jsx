@@ -20,14 +20,14 @@ export default function About() {
           <Typography type="h1" className="about-title">
             Emily Nilsson
           </Typography>
-          <Typography type="h3" className="about-subtitle">
+          <Typography type="p2" className="about-subtitle">
             Crafting user experiences with heart and code
           </Typography>
 
           <div className="about-bio">
             <Typography type="p" className="about-paragraph">
               Hej! I’m a UX/UI designer & front-end dev who believes that
-              the best interfaces are the ones you don’t notice—until they
+              the best interfaces are the ones you don’t notice until they
               delight you.
             </Typography>
             <Typography type="p" className="about-paragraph">
@@ -37,7 +37,7 @@ export default function About() {
             </Typography>
             <Typography type="p" className="about-paragraph">
               Off-duty, I hunt for coffee-shop inspiration, sketch with
-              watercolor, or plan my next adventure—because a fresh perspective
+              watercolor, or plan my next adventure, because a fresh perspective
               is the secret to better design.
             </Typography>
           </div>
