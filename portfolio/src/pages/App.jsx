@@ -1,21 +1,24 @@
 import React from 'react';
 import '../styles.css';
 import Header from './header';
-import Hero from './Hero';
-import Contact from './Contact';
+import Hero from './hero';
+import Contact from './contact';
 import Graphics from './graphics';
 import Projects from './projects';
+import Resume from './resume';
 import About from './about';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
     return (
         <Router>
+            <div id="top"></div>
             <Header />
             <Hero />
-            <About />
-            <Graphics />
+            <Resume />
             <Projects />
+            <Graphics />
+            <About />
             <Contact />
         </Router>
     );

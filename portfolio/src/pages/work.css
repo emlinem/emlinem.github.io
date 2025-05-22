@@ -50,7 +50,7 @@
   transform: none;
   bottom: auto;
   left: auto;
-  padding: 16px 20px;
+  padding-top: 16px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -172,7 +172,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: transparent;       /* no white circle */
+  background: rgba(0, 0, 0, 0.2);       /* no white circle */
   border: none;
   width: 36px;
   height: 36px;
@@ -186,7 +186,6 @@
   font-size: 20px;
   line-height: 1;
   color: #fff;
-  
   outline: none;                /* remove focus outline */
   -webkit-tap-highlight-color: transparent;
 }
@@ -202,7 +201,6 @@
 .carousel-btn:focus,
 .carousel-btn:active {
   outline: none;
-  background: transparent;
 }
 
 .carousel-btn:disabled {

@@ -1,57 +1,93 @@
-/* Header */
-header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px 80px;
-    flex-direction: row;
-    width: 100vw;
-    max-width: 100%;
+/* header.css */
+
+/* Prevent fixed header from covering anchored content */
+html {
+  scroll-padding-top: 80px; /* match your header’s height */
 }
 
-
-/* Navigation */
-nav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    width: 100%;
+/* Base header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;               /* adjust as needed */
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 100;
 }
 
-ul{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;  
+/* When hidden (scrolling down), slide up out of view */
+.header--hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
 }
 
-nav ul li {
-    display: inline;
+/* Logo / Name */
+.logo {
+  position: fixed;
+  top: 20px;                  /* match header’s padding-top */
+  left: 20px;                    /* flush to the viewport edge */
+  padding: 4px 12px;
+  font-family: 'Post', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #282828;
+  transition: color 0.2s, opacity 0.2s;
+  z-index: 101;               /* above the header itself */
+}
+.logo:hover {
+  opacity: 1;
+}
+.logo a {
+  text-decoration: none;
+  color: inherit;
+}
+.logo a:hover {
+  color: #193497;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #282828;
-    font-weight: bold;
-    font-size: 20px;
-    width: 100%;
+/* Main navigation */
+.main-nav {
+  margin-left: auto;          /* push it to the right */
 }
-
-nav ul li a:hover {
-    text-decoration: none;
-    color: #193497;
-    transition: ease-in-out 0.2s ;
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+.main-nav li a {
+  text-decoration: none;
+  font-family: 'Post', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #282828;
+  transition: color 0.2s ease;
+}
+.main-nav li a:hover {
+  color: #193497;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    nav ul {
-        flex-direction: column;
-        gap: 20px;
-    }
+  .header {
+    padding: 20px 5vw;
+  }
+  .logo {
+    top: 20px;
+    left: 5vw;
+    font-size: 18px;
+  }
+  .main-nav ul {
+    gap: 20px;
+  }
 }

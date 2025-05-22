@@ -8,7 +8,7 @@
 
 /* Ensure content is left-aligned */
 .content {
-    width: 60%; /* Adjust width to prevent overflow */
+    width: 50%; /* Adjust width to prevent overflow */
 }
 
 .herocontent {

@@ -23,8 +23,8 @@ export default function Projects() {
 
   return (
     <section id="projects" className="work-section">
-      <Typography type="h2" color="primary">
-        Graphic Design work
+      <Typography type="h1" color="primary">
+        UX/UI Design
       </Typography>
 
       <div className="work-grid">
@@ -39,12 +39,12 @@ export default function Projects() {
             </div>
             <div className="card-info">
               {work.name && (
-                <Typography type="h4" color="primary">
+                <Typography type="h2" color="primary">
                   {work.name}
                 </Typography>
               )}
               {work.description && (
-                <Typography type="p2" color="primary">
+                <Typography type="p" color="primary">
                   {work.description}
                 </Typography>
               )}
@@ -120,7 +120,7 @@ export default function Projects() {
 
               {/* RIGHT: Details */}
               <div className="popup-details">
-                <Typography type="h2" color="primary">
+                <Typography type="h1" color="primary">
                   {selectedProject.name}
                 </Typography>
 
@@ -136,7 +136,7 @@ export default function Projects() {
 
                 {selectedProject.tools && (
                   <>
-                    <Typography type="p2" color="primary">
+                    <Typography type="h2" color="primary">
                       Tools Used:
                     </Typography>
                     <div className="tools-container">
@@ -159,7 +159,7 @@ export default function Projects() {
                         rel="noopener noreferrer"
                         className="card-link"
                       >
-                        <Typography type="p2" color="primary">
+                        <Typography type="p" color="primary">
                           {selectedProject.linkname[idx]} <span className="arrow">→</span>
                         </Typography>
                       </a>
