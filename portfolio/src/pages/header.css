@@ -1,69 +1,83 @@
-/* header.css */
-
-/* Prevent fixed header from covering anchored content */
+/* --- General Fix --- */
 html {
-  scroll-padding-top: 80px; /* match your header’s height */
+  scroll-padding-top: 80px;
 }
 
-/* Base header */
+/* --- Header Base --- */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  box-sizing: border-box;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;               /* adjust as needed */
-  background: rgba(255,255,255,0.8);
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(4px);
   transition: transform 0.3s ease, opacity 0.3s ease;
   z-index: 100;
 }
 
-/* When hidden (scrolling down), slide up out of view */
+.header nav ul li a:hover {
+  animation: wiggle 0.3s ease-in-out;
+  display: inline-block;
+}
+
 .header--hidden {
   transform: translateY(-100%);
   opacity: 0;
   pointer-events: none;
 }
 
-/* Logo / Name */
 .logo {
   position: fixed;
-  top: 20px;                  /* match header’s padding-top */
-  left: 20px;                    /* flush to the viewport edge */
-  padding: 4px 12px;
+  top: 20px;
+  left: 20px;
+  padding-left: 12px;
   font-family: 'Post', sans-serif;
   font-size: 30px;
   font-weight: bold;
   color: #282828;
   transition: color 0.2s, opacity 0.2s;
-  z-index: 101;               /* above the header itself */
+  z-index: 101;
 }
+
 .logo:hover {
   opacity: 1;
+  animation: wiggle 0.3s ease-in-out;
+  display: inline-block;
 }
+
 .logo a {
   text-decoration: none;
   color: inherit;
 }
+
 .logo a:hover {
   color: #193497;
 }
 
-/* Main navigation */
-.main-nav {
-  margin-left: auto;          /* push it to the right */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25%      { transform: rotate(-2deg); }
+  75%      { transform: rotate( 2deg); }
 }
+
+/* --- Navigation --- */
+.main-nav {
+  margin-left: auto;
+}
+
 .main-nav ul {
-  list-style: none;
   display: flex;
   gap: 40px;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
+
 .main-nav li a {
   text-decoration: none;
   font-family: 'Post', sans-serif;
@@ -73,20 +87,22 @@ html {
   color: #282828;
   transition: color 0.2s ease;
 }
+
 .main-nav li a:hover {
   color: #193497;
 }
 
-/* Responsive adjustments */
+/* --- Responsive --- */
 @media (max-width: 768px) {
   .header {
     padding: 20px 5vw;
   }
+
   .logo {
-    top: 20px;
     left: 5vw;
     font-size: 18px;
   }
+
   .main-nav ul {
     gap: 20px;
   }

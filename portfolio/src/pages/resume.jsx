@@ -23,7 +23,7 @@ function Resume() {
                 2022 – Present
               </Typography>
               <Typography type="p" color="primary">
-                Human Computer Interaction with a focus on UX &amp; UI.
+                I'm in the last year of my Master's in Interactive Media Technology at KTH, where I get to dive deep into UX and interaction design, combining creativity, technology, and user insight to craft engaging and meaningful digital experiences.
               </Typography>
             </div>
           </div>
@@ -37,7 +37,7 @@ function Resume() {
                 2019 – 2022
               </Typography>
               <Typography type="p" color="primary">
-                Relevant courses in UX/UI Design and Web Development.
+                I have a Bachelor's degree in Media Technology from KTH, where I had a great time exploring the exciting mix of technology, design, and user experience to create fun and innovative digital solutions.
               </Typography>
             </div>
           </div>
@@ -60,9 +60,7 @@ function Resume() {
                 2024
               </Typography>
               <Typography type="p" color="primary">
-                Led Kollin’s website refresh: managed a small UX team, ran user
-                surveys and interviews, and redesigned key pages to elevate customer
-                satisfaction.
+                I led Kollin’s website refresh, managing a small UX team, conducting user surveys and interviews, and redesigning key pages to boost customer satisfaction and improve the overall user experience.
               </Typography>
             </div>
           </div>
@@ -76,7 +74,7 @@ function Resume() {
                 2024
               </Typography>
               <Typography type="p" color="primary">
-                Created the logo and branding for the KTH Space Center and THS career fair.
+                I created the logo and branding for ORBIT, the KTH Space Center and THS career fair, giving the event a bold visual identity that reflects its focus on innovation and exploration.
               </Typography>
             </div>
           </div>
@@ -90,7 +88,7 @@ function Resume() {
                 2019 – 2022
               </Typography>
               <Typography type="p" color="primary">
-                Led a small team of graphic designers, designed both physical and digital marketing materials.
+                I led a small team of graphic designers and created both physical and digital marketing materials, ensuring a cohesive and eye-catching visual presence across all channels.
               </Typography>
             </div>
           </div>

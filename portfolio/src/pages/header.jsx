@@ -38,7 +38,7 @@ export default function Header() {
       </div>
       <nav className="main-nav">
         <ul>
-          <li><a href="#resume">resume</a></li>
+          <li><a href="#resume">resumé</a></li>
           <li><a href="#projects">ux/ui design</a></li>
           <li><a href="#graphics">graphic design</a></li>
           <li><a href="#about">about me</a></li>

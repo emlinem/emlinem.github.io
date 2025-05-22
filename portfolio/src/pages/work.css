@@ -1,73 +1,73 @@
-/* work.css */
-
-/* --- Grid & Section --- */
+/* === WORK SECTION === */
 .work-section {
   padding: 60px 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
+
 .work-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 40px;
 }
 
+/* === WORK CARD === */
 .work-card-container {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: box-shadow 0.1s ease;
+  transition: transform 0.3s ease-in-out, box-shadow 0.1s ease;
   cursor: pointer;
+  transform-origin: center;
 }
 
 .work-card-container:hover {
-    transform: scale(1.02);
-    transition: ease-in-out 0.3s;
+  transform: scale(1.02);
+  transition: transform 0.3s ease-in-out;
 }
 
-/* --- The Image --- */
 .work-card {
   width: 100%;
-  aspect-ratio: 4/3;      /* uniform height */
+  aspect-ratio: 4 / 3;
+  position: relative;
   overflow: hidden;
   flex-shrink: 0;
 }
+
 .work-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position:top;
+  object-position: top;
   display: block;
 }
 
 .work-card:hover {
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-/* --- Info sits BELOW the image, not on top --- */
+/* === CARD INFO === */
 .card-info {
   position: relative;
-  transform: none;
-  bottom: auto;
-  left: auto;
   padding-top: 16px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
-/* --- Typography in the info block --- */
 .card-info h3 {
   margin: 0 0 4px;
   font-size: 1rem;
   font-weight: 600;
   color: #111;
 }
+
 .card-info .date {
   font-size: 0.9rem;
   color: #666;
   margin-bottom: 8px;
 }
+
 .card-info p {
   font-size: 0.95rem;
   color: #444;
@@ -75,11 +75,11 @@
   flex-grow: 1;
 }
 
-/* --- Footer links --- */
 .card-links {
   display: flex;
   gap: 12px;
 }
+
 .card-link {
   font-size: 0.9rem;
   color: #0070f3;
@@ -89,18 +89,52 @@
   align-items: center;
   transition: transform 0.2s ease;
 }
+
 .card-link .arrow {
   margin-left: 4px;
 }
+
 .card-link:hover {
   transform: translateX(3px);
 }
 
-/* ---------- OVERLAY (full‐screen center) ---------- */
+/* === CARD HOVER OVERLAY === */
+.card-hover {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(242, 237, 64, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.work-card-container:hover .card-hover {
+  opacity: 1;
+}
+
+.hover-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #282828;
+  margin-bottom: 0.5rem;
+}
+
+.hover-desc {
+  font-size: 0.95rem;
+  color: #282828;
+  line-height: 1.4;
+}
+
+/* === POPUP OVERLAY === */
 .popup-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
@@ -108,39 +142,35 @@
   align-items: center;
   justify-content: center;
   z-index: 1000;
-}
-
-/* fade-in */
-@keyframes fadeInOverlay {
-  from { background: rgba(0,0,0,0) }
-  to   { background: rgba(0,0,0,0.6) }
-}
-.popup-overlay {
   animation: fadeInOverlay 0.25s ease-out;
 }
 
-/* ---------- POPUP BOX: fixed height ---------- */
+@keyframes fadeInOverlay {
+  from { background: rgba(0, 0, 0, 0); }
+  to   { background: rgba(0, 0, 0, 0.6); }
+}
+
+/* === POPUP CONTENT === */
 .popup-content {
   position: relative;
   display: flex;
   width: 90%;
   max-width: 1200px;
-  height: 95vh;        /* lock popup height */
+  height: 95vh;
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   animation: fadeInContent 0.25s ease-out;
 }
 
-/* ---------- INNER LAYOUT ---------- */
 .popup-inner {
   display: flex;
   width: 100%;
   height: 100%;
 }
 
-/* ---------- CLOSE BUTTON ---------- */
+/* === CLOSE BUTTON === */
 .close-btn {
   position: absolute;
   top: 12px;
@@ -148,16 +178,17 @@
   font-size: 1.8rem;
   background: transparent;
   border: none;
-  cursor: pointer;
   color: #333;
+  cursor: pointer;
   padding: 4px;
   z-index: 2;
 }
+
 .close-btn:hover {
   color: #000;
 }
 
-/* ---------- CAROUSEL CONTAINER (left) ---------- */
+/* === CAROUSEL === */
 .carousel-container {
   flex: 0 0 60%;
   display: flex;
@@ -167,26 +198,33 @@
   position: relative;
 }
 
-/* ---------- CAROUSEL BUTTONS ---------- */
+.carousel-image {
+  max-height: 85vh;
+  max-width: 100%;
+  object-fit: contain;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 .carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.2);       /* no white circle */
+  background: rgba(0, 0, 0, 0.2);
   border: none;
   width: 36px;
   height: 36px;
-  border-radius: 0;             /* square or pillless */
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  box-shadow: none;             /* no shadow behind arrow */
-  transition: transform 0.2s ease;
-  font-size: 20px;
-  line-height: 1;
   color: #fff;
-  outline: none;                /* remove focus outline */
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -198,38 +236,15 @@
   background: rgba(0, 0, 0, 0.6);
 }
 
-.carousel-btn:focus,
-.carousel-btn:active {
-  outline: none;
-}
-
 .carousel-btn:disabled {
   opacity: 0.3;
   cursor: default;
 }
 
-/* Carousel image */
-.carousel-image {
-  max-height: 85vh;
-  max-width: 100%;
-  object-fit: contain;
-  border-radius: 4px;
-}
-
-.carousel-image {
-  animation: fadeIn 0.4s ease-in-out;
-}
-
-/* Keyframes for the fade */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-/* ---------- CAROUSEL INDICATORS ---------- */
+/* === CAROUSEL INDICATORS === */
 .carousel-indicators {
   position: absolute;
-  bottom: 16px;
+  bottom: 12px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -250,18 +265,16 @@
   background: rgba(0, 0, 0, 0.8);
 }
 
-
-/* ---------- DETAILS (right) ---------- */
+/* === DETAILS COLUMN === */
 .popup-details {
   display: flex;
   flex-direction: column;
   padding: 32px;
-  gap: 24px;             /* space between sections */
+  gap: 24px;
   overflow-y: auto;
   box-sizing: border-box;
 }
 
-/* Title */
 .popup-details h2 {
   margin: 0;
   font-size: 2rem;
@@ -269,15 +282,13 @@
   color: #222;
 }
 
-/* Date */
 .popup-details .date {
   margin: 0;
   font-size: 0.9rem;
-  color: #666;
   font-style: italic;
+  color: #666;
 }
 
-/* Description / details text */
 .popup-details p {
   margin: 0;
   font-size: 1rem;
@@ -285,12 +296,13 @@
   color: #333;
 }
 
-/* Tools section */
+/* === TOOLS & LINKS === */
 .tools-container {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
+
 .tool-tag {
   padding: 6px 12px;
   background: #f0f0f0;
@@ -300,14 +312,12 @@
   color: #555;
 }
 
-/* Push links to the bottom of the column */
 .popup-links {
   margin-top: auto;
   display: flex;
   gap: 16px;
 }
 
-/* Style the links */
 .popup-links .card-link {
   font-size: 0.95rem;
   font-weight: 500;
@@ -315,11 +325,7 @@
   text-decoration: none;
   transition: color 0.2s;
 }
+
 .popup-links .card-link:hover {
   color: #0051a3;
-}
-
-/* Indicators row sits nicely under carousel */
-.carousel-indicators {
-  bottom: 12px;           /* nudge a bit down if needed */
 }

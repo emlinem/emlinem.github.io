@@ -1,65 +1,66 @@
-/* resume.css */
-
-/* Container */
+/* --- Resume Container --- */
 .resume {
   padding: 60px 20px;
   max-width: 85%;
   margin: 0 auto;
 }
 
-/* Header */
+/* --- Header --- */
 .resume-header {
   text-align: center;
   margin-bottom: 40px;
 }
 
-/* Grid */
+/* --- Grid Layout --- */
 .resume-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 60px;
 }
 
-/* Common column styles */
+/* --- Column --- */
 .column {
   display: flex;
   flex-direction: column;
 }
 
-/* Timeline items */
+/* --- Timeline Item --- */
 .item {
   display: flex;
   position: relative;
   padding-bottom: 24px;
 }
 
-/* Content box */
 .item-content {
   flex: 1;
 }
 
-/* Typography tweaks */
+/* --- Typography --- */
 .typography.date {
   font-style: italic;
   color: #666;
   margin-bottom: 8px;
 }
+
 .typography.p {
   margin-top: 8px;
 }
 
-/* Responsive */
+/* --- Responsive --- */
 @media (max-width: 768px) {
   .resume-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
+
   .column::before {
     left: 0;
   }
+
   .item {
     padding-left: 28px;
   }
+
   .item-marker {
     margin-left: -28px;
   }

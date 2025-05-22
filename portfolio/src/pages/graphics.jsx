@@ -5,19 +5,19 @@ import './work.css';
 import graphicsData from './graphicsData';
 
 export default function Graphics() {
-  const [selectedProject, setSelectedProject] = useState(null);
+const [selectedGraphic, setSelectedGraphic] = useState(null);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [carouselIndex, setCarouselIndex] = useState(0);
 
-  const handleCardClick = (project) => {
+  const handleCardClick = (graphic) => {
     setScrollPosition(window.scrollY);
-    setSelectedProject(project);
+    setSelectedGraphic(graphic);
     setCarouselIndex(0);
     document.body.classList.add('no-scroll');
   };
 
   const closePopup = () => {
-    setSelectedProject(null);
+    setSelectedGraphic(null);
     document.body.classList.remove('no-scroll');
     window.scrollTo(0, scrollPosition);
   };
@@ -37,24 +37,25 @@ export default function Graphics() {
           >
             <div className="work-card">
               <img src={work.img} alt={work.name} />
-            </div>
-            <div className="card-info">
-              {work.name && (
-                <Typography type="h2" color="primary">
+
+              {/* ——— Hover overlay ——— */}
+              <div className="card-hover">
+                <Typography type="h2" className="hover-title">
                   {work.name}
                 </Typography>
-              )}
-              {work.description && (
-                <Typography type="p" color="primary">
-                  {work.description}
-                </Typography>
-              )}
+                {work.description && (
+                  <Typography type="p" className="hover-desc">
+                    {work.description}
+                  </Typography>
+                )}
+              </div>
             </div>
           </div>
         ))}
       </div>
 
-      {selectedProject && (
+      {/* ——— Popup for selected graphic ——— */}
+      {selectedGraphic && (
         <div className="popup-overlay" onClick={closePopup}>
           <div
             className="popup-content"
@@ -71,7 +72,7 @@ export default function Graphics() {
                   className="carousel-btn prev"
                   onClick={(e) => {
                     e.stopPropagation();
-                    const count = 1 + (selectedProject.extraImages?.length || 0);
+                    const count = 1 + (selectedGraphic.extraImages?.length || 0);
                     setCarouselIndex(i => (i - 1 + count) % count);
                   }}
                 >
@@ -80,16 +81,16 @@ export default function Graphics() {
 
                 {(() => {
                   const slides = [
-                    selectedProject.img,
-                    ...(selectedProject.extraImages || []),
+                    selectedGraphic.img,
+                    ...(selectedGraphic.extraImages || []),
                   ];
                   return (
                     <>
                       <img
-                        key={carouselIndex}                     // ← force remount per slide
+                        key={carouselIndex}                   
                         className="carousel-image"
                         src={slides[carouselIndex]}
-                        alt={`${selectedProject.name} slide ${carouselIndex + 1}`}
+                        alt={`${selectedGraphic.name} slide ${carouselIndex + 1}`}
                       />
                       <div className="carousel-indicators">
                         {slides.map((_, idx) => (
@@ -111,7 +112,7 @@ export default function Graphics() {
                   className="carousel-btn next"
                   onClick={(e) => {
                     e.stopPropagation();
-                    const count = 1 + (selectedProject.extraImages?.length || 0);
+                    const count = 1 + (selectedGraphic.extraImages?.length || 0);
                     setCarouselIndex(i => (i + 1) % count);
                   }}
                 >
@@ -122,26 +123,26 @@ export default function Graphics() {
               {/* RIGHT: Details */}
               <div className="popup-details">
                 <Typography type="h1" color="primary">
-                  {selectedProject.name}
+                  {selectedGraphic.name}
                 </Typography>
 
-                {selectedProject.date && (
+                {selectedGraphic.date && (
                   <Typography type="date" color="primary">
-                    {selectedProject.date}
+                    {selectedGraphic.date}
                   </Typography>
                 )}
 
                 <Typography type="p" color="primary">
-                  {selectedProject.details || selectedProject.description}
+                  {selectedGraphic.details || selectedGraphic.description}
                 </Typography>
 
-                {selectedProject.tools && (
+                {selectedGraphic.tools && (
                   <>
-                    <Typography type="h2" color="primary">
+                    <Typography type="p2" color="primary">
                       Tools Used:
                     </Typography>
                     <div className="tools-container">
-                      {selectedProject.tools.map((tool, idx) => (
+                      {selectedGraphic.tools.map((tool, idx) => (
                         <span key={idx} className="tool-tag">
                           {tool}
                         </span>
@@ -150,9 +151,9 @@ export default function Graphics() {
                   </>
                 )}
 
-                {selectedProject.links?.length > 0 && (
+                {selectedGraphic.links?.length > 0 && (
                   <div className="popup-links">
-                    {selectedProject.links.map((url, idx) => (
+                    {selectedGraphic.links.map((url, idx) => (
                       <a
                         key={idx}
                         href={url}
@@ -160,8 +161,8 @@ export default function Graphics() {
                         rel="noopener noreferrer"
                         className="card-link"
                       >
-                        <Typography type="p" color="primary">
-                          {selectedProject.linkname[idx]} <span className="arrow">→</span>
+                        <Typography type="p2" color="primary">
+                          {selectedGraphic.linkname[idx]} <span className="arrow">→</span>
                         </Typography>
                       </a>
                     ))}

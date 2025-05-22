@@ -8,10 +8,12 @@ export default function Contact() {
 
   return (
     <section id="contact" className="simple-contact">
-      <Typography type="h1" className="name-year">Emily Nilsson, {currentYear}</Typography>
+      <Typography type="h1" className="name-year">
+        Emily Nilsson, {currentYear}
+      </Typography>
       <div className="social-icons">
         <a
-          href="www.linkedin.com/in/nilssonemily"
+          href="https://www.linkedin.com/in/nilssonemily"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
@@ -29,7 +31,6 @@ export default function Contact() {
         <a
           href="mailto:emily.r.nilsson@gmail.com"
           target="_blank"
-          className="email-link"
           rel="noopener noreferrer"
           aria-label="Email"
         >
