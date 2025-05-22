@@ -1,7 +1,7 @@
 /* General Styles */
 @font-face {
-  font-family: 'Odachi';
-  src: url('/fonts/Odachi-Regular.woff') format('woff');
+  font-family: 'Post';
+  src: url('/fonts/Post.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -15,7 +15,7 @@
 
 html, body {
     width: 100%;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
 }
 
 body {
@@ -43,25 +43,6 @@ p {
     margin-top: 10px;
 }
 
-/* Hero Section */
-.hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 100px 50px;
-}
-
-.content h1 {
-    font-size: 64px;
-    font-weight: bold;
-    line-height: 1.2;
-}
-
-.content p {
-    font-size: 18px;
-    margin-top: 10px;
-}
-
 .cta-btn {
     display: inline-block;
     margin-top: 20px;
@@ -76,225 +57,22 @@ p {
     border: 1px solid #ff5462;
     text-transform: uppercase;
     font-size: 14px;
+
+    transition:
+    transform 200ms cubic-bezier(0.34,1.56,0.64,1),
+    color 0.4s ease-in-out,
+    border 0.4s ease-in-out;
+  will-change: transform;
 }
 
-.cta-btn:hover{
-    background: #fff;
-    color: #ff5462;
-    border: 1px dashed #ff5462;
+.cta-btn:hover {
+  transform: scale(1.05);
+  background: #fff;
+  color: #ff5462;
+  border: 1px dashed #ff5462;
 }
 
 .hero-image img {
     width: 400px;
     border-radius: 50%;
-}
-
-/* Project Section */
-.projects {
-    padding: 80px 50px;
-    text-align: center;
-}
-
-.projects h2 {
-    font-size: 48px;
-    font-weight: bold;
-    color: #f9f6ef;
-}
-
-/* Project Grid Layout */
-.project-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    gap: 30px;
-    margin-top: 50px;
-    justify-content: center;
-}
-
-/* Project Card */
-.project {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    height: 450px; /* Increased height */
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    background: rgba(255, 255, 255, 0.35); /* Transparent frosted effect */
-    backdrop-filter: blur(15px); /* Frosted glass effect */
-    -webkit-backdrop-filter: blur(10px); /* Safari support */
-    transition: all 0.4s ease-in-out;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-/* Project Image */
-.project img {
-    width: 100%; 
-    height: 70%; /* Adjust image height proportionally */
-    object-fit: cover; /* Ensures proper cropping */
-    object-position: center;
-    margin: 0;
-    padding: 0;
-    display: block;
-}
-
-/* Project Content */
-.project-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center text vertically */
-    align-items: start; /* Center text horizontally */
-    padding: 20px 15px;
-    padding-left: 35px;
-    text-align: center;
-    color: #282828;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
-.project h3 {
-    font-size: 32px;
-    margin: 5px 0 0 0; /* Reduced space above and below */
-    font-weight: bold;
-}
-
-.project p {
-    font-size: 16px;
-    margin-top: 0px; /* Less space between texts */
-    color: rgba(0, 0, 0, 0.8);
-}
-
-/* Hover Effects */
-.project:hover {
-    transform: translateY(-5px); /* Lift the card slightly */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-}
-
-/* My Works Section */
-.my-works-section {
-    padding: 100px 50px;
-    text-align: center;
-    border-radius: 20px;
-}
-
-.my-works-section h1 {
-    font-size: 64px;
-    font-weight: bold;
-    color: #f9f6ef;
-    margin: 0;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-}
-
-
-/* Works List */
-.works-list {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    padding: 50px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.work-item {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    border-radius: 20px;
-    overflow: hidden;
-    height: 250px; /* Fixed height */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    background: rgba(255, 255, 255, 0.35); /* Transparent frosted effect */
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(10px);
-    transition: all 0.4s ease-in-out;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.work-item img {
-    height: 80%;
-    max-width: 200px; /* Set a consistent image width */
-    object-fit: contain;
-    padding: 50px;
-}
-
-.work-content {
-    padding: 30px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.work-content h2 {
-    font-size: 28px;
-    font-weight: bold;
-    text-align: left;
-    margin: 0;
-    color: #282828;
-}
-
-.work-content p {
-    font-size: 18px;
-    color: #282828;
-    margin-top: 10px;
-}
-
-/* Tech Stack */
-.tech-stack {
-    margin-top: 15px;
-}
-
-.tech-stack span {
-    display: inline-block;
-    background: #282828;
-    color: #f9f6ef;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 8px 15px;
-    border-radius: 50px;
-    margin-right: 10px;
-    margin-bottom: 5px;
-}
-
-/* Hover Effect */
-.work-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-}
-
-/* Masonry Layout */
-.graphics-container {
-    padding: 50px;
-    background: #f9f6ef;
-    text-align: center;
-}
-
-.graphics-container h1 {
-    font-size: 36px;
-    margin-bottom: 30px;
-    color: #333;
-}
-
-.masonry-layout {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.masonry-item {
-    position: relative;
-    width: calc(33.333% - 20px); /* 3 columns */
-    overflow: hidden;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.masonry-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
 }

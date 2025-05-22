@@ -26,15 +26,3 @@
 .social-icons a:hover {
   color: #193497;
 }
-
-.email-link {
-  display: inline-block;
-  font-size: 14px;
-  color: #282828;
-  text-decoration: underline;
-  transition: color 0.2s ease-in-out;
-}
-
-.email-link:hover {
-  color: #193497;
-}

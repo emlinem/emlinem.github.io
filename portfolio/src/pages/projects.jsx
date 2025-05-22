@@ -1,10 +1,11 @@
+// src/sections/Projects.jsx
 import React, { useState } from 'react';
 import Typography from '../components/Typography';
 import './work.css';
 import projectsData from './projectsData';
 
 export default function Projects() {
-  const [selectedProject, setSelectedProject] = useState(null);
+const [selectedProject, setSelectedProject] = useState(null);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [carouselIndex, setCarouselIndex] = useState(0);
 
@@ -36,23 +37,24 @@ export default function Projects() {
           >
             <div className="work-card">
               <img src={work.img} alt={work.name} />
-            </div>
-            <div className="card-info">
-              {work.name && (
-                <Typography type="h2" color="primary">
+
+              {/* ——— Hover overlay ——— */}
+              <div className="card-hover">
+                <Typography type="h2" className="hover-title">
                   {work.name}
                 </Typography>
-              )}
-              {work.description && (
-                <Typography type="p" color="primary">
-                  {work.description}
-                </Typography>
-              )}
+                {work.description && (
+                  <Typography type="p" className="hover-desc">
+                    {work.description}
+                  </Typography>
+                )}
+              </div>
             </div>
           </div>
         ))}
       </div>
 
+      {/* ——— Popup for selected project ——— */}
       {selectedProject && (
         <div className="popup-overlay" onClick={closePopup}>
           <div
@@ -85,7 +87,7 @@ export default function Projects() {
                   return (
                     <>
                       <img
-                        key={carouselIndex}                     // ← force remount per slide
+                        key={carouselIndex}                   
                         className="carousel-image"
                         src={slides[carouselIndex]}
                         alt={`${selectedProject.name} slide ${carouselIndex + 1}`}
@@ -136,7 +138,7 @@ export default function Projects() {
 
                 {selectedProject.tools && (
                   <>
-                    <Typography type="h2" color="primary">
+                    <Typography type="p2" color="primary">
                       Tools Used:
                     </Typography>
                     <div className="tools-container">
@@ -159,7 +161,7 @@ export default function Projects() {
                         rel="noopener noreferrer"
                         className="card-link"
                       >
-                        <Typography type="p" color="primary">
+                        <Typography type="p2" color="primary">
                           {selectedProject.linkname[idx]} <span className="arrow">→</span>
                         </Typography>
                       </a>
