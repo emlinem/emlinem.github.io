@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+@font-face {
+  font-family: 'Post';
+  src: url('/fonts/Post.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 .typography {
     margin: 0;
     padding: 0;
@@ -5,70 +16,48 @@
 
 /* Text types */
 .typography.hero {
-    font-size: 55px;
-    font-weight: bold;
-    text-align: left;
-    line-height: 1.2;
+  font-family: 'Post', sans-serif;
+  font-size: 4rem;
+  line-height: 1.1;
+  color: #193497;
 }
 
 .typography.h1 {
-    font-size: 48px;
-    font-weight: bold;
-    text-align: left;
-    line-height: 1.2;
-}
-
-.typography.h2 {
+    font-family: 'Post', sans-serif;
     font-size: 36px;
     font-weight: bold;
     text-align: left;
+    line-height: 1.5;
+    letter-spacing: 5px;
 }
 
-.typography.h3 {
-    font-size: 28px;
+.typography.h2 {
+    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     text-align: left;
-}
-
-.typography.h4 {
-    font-size: 18px;
-    font-weight: bold;
-    text-align: left;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .typography.p {
-    font-size: 18px;
-    line-height: 1.6;
-    text-align: left;
-}
-
-.typography.p2 {
-    font-size: 14px;
-    text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;        
+  line-height: 1.2;
+  text-align: left;
 }
 
 .typography.date {
-    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
     font-style: italic;
 }
 
 /* Color options */
-.typography.primary {
-    color: #282828;
-}
-
-.typography.secondary {
-    color: #193497;
-}
-
-.typography.tertiary {
-    color: #eda398;
-}
-
-.typography.white {
-    color: #f9f6ef;
-}
-
-.typography.black {
-    color: #282828;
+.typography.primary {color: #282828;}
+.typography.secondary {color: #193497;}
+.typography.yellow {color: #fcfc17}
+.typography.tertiary {color: #eda398;}
+.typography.white {color: #f9f6ef;}
+.typography.black {color: #282828;
 }

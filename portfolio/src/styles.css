@@ -1,4 +1,12 @@
 /* General Styles */
+@font-face {
+  font-family: 'Odachi';
+  src: url('/fonts/Odachi-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +22,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #f9f6ef;
+    background: #fff;
     background-size: cover;
     color: #282828;
 }
@@ -58,19 +66,22 @@ p {
     display: inline-block;
     margin-top: 20px;
     padding: 15px 30px;
-    background: #282828;
-    color: #f9f6ef;
+    background: #ff5462;
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
     border-radius: 50px;
     transition: all 0.4s ease-in-out;
     width: 210px;
+    border: 1px solid #ff5462;
+    text-transform: uppercase;
+    font-size: 14px;
 }
 
 .cta-btn:hover{
-    background: #f9f6ef;
-    color: #282828;
-    border: none;
+    background: #fff;
+    color: #ff5462;
+    border: 1px dashed #ff5462;
 }
 
 .hero-image img {
