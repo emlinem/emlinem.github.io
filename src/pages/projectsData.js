@@ -9,9 +9,12 @@ import KollinMockup from '../assets/projects_folder/KollinMockup.png';
 import KollinMockup2 from '../assets/projects_folder/KollinMockup2.png';
 
 import Flow from '../assets/projects_folder/Flow.png';
+import FlowCover from '../assets/projects_folder/FlowCover.png';
+import FlowInfo from '../assets/projects_folder/FlowInfo.png';
 
 import Ambiance from '../assets/projects_folder/Ambiance.png';
 import Ambiance2 from '../assets/projects_folder/Ambiance2.png';
+import AmbianceCover from '../assets/projects_folder/AmbianceCover.png';
 import Consent from '../assets/projects_folder/Consent.png';
 import Consent2 from '../assets/projects_folder/Consent2.png';
 import TimeLens from '../assets/projects_folder/TimeLens.jpg';
@@ -68,7 +71,7 @@ const projectsData = [
     },
     {
         id: 5,
-        img: Ambiance,
+        img: AmbianceCover,
         name: 'Ambiance',
         date: '2023',
         description: 'Spotify design challenge: Integrating AI-driven music recommendations.',
@@ -76,19 +79,19 @@ const projectsData = [
         tools: ['Figma'],
         linkname: ['Test it out!'],
         links: ['https://www.figma.com/proto/zRSS69GUvBn9NIn89WjxOz/Project-Challenges?type=design&node-id=2-13&t=4dKH1kCwHX5j0Sbj-0&scaling=scale-down&page-id=0%253A1&starting-point-node-id=2%253A13&show-proto-sidebar=1'],
-        extraImages: [Ambiance2]
+        extraImages: [Ambiance, Ambiance2]
     },
     {
         id: 6,
-        img: Flow,
+        img: FlowCover,
         name: 'FLOW',
         date: '2024',
         description: 'A productivity app designed to align with how your brain naturally works.',
         details: 'FLOW was the final project in a UX course, developed in Figma and grounded in cognitive behavioral theory. The app is designed to help users better understand their productivity patterns and mental states, encouraging them to work with their natural rhythms rather than against them. The goal was to create a more mindful and personalized approach to getting things done—supporting focus, motivation, and balance.',
         tools: ['Figma'],
         linkname: ['Check out the prototype!'],
-        links: ['https://www.figma.com/proto/KYd6CsAOHDItDkD35014pv/Personal-Project-first-version---Emily---Fanny?t=ZyBYR6Lix9pOgV0O-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=1-2&starting-point-node-id=1%3A2'],
-        extraImages: []
+        links: ['https://www.figma.com/proto/9mBRM0dVUBHUH1A6cTbA0A/UX-Personal-project---Emily---Fanny?node-id=86-583&p=f&t=dTfrd0OFtMy0BMRk-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=86%3A583&show-proto-sidebar=1'],
+        extraImages: [Flow, FlowInfo]
     },
     {
         id: 7,

@@ -1,44 +1,50 @@
-// src/sections/About.jsx
 import React from 'react';
 import Typography from '../components/Typography';
 import './about.css';
 import EmilyAbout from '../assets/EmilyAbout.jpg';
 import { FaEnvelope } from 'react-icons/fa';
 
-
 export default function About() {
   const skills = ['Figma', 'React', 'TypeScript', 'Illustrator', 'CSS'];
+  const bulletPoints = [
+    'In the kitchen testing yet another pasta hack and pretending the smoke alarm is a timer.',
+    'On my computer playing The Sims and micromanaging virtual lives while avoiding my own laundry pile.',
+    'In the group chat planning the next party, dinner theme, or weekend getaway for my friends (someone’s gotta keep the spreadsheets tidy).',
+  ];
 
   return (
     <section id="about" className="about-section">
       <div className="about-container">
         {/* LEFT: Text */}
         <div className="about-text">
-          <Typography type="p2" className="about-pretitle">
+          <Typography type="h2" className="about-pretitle">
             GET TO KNOW ME
           </Typography>
           <Typography type="h1" className="about-title">
             Emily Nilsson
           </Typography>
-          <Typography type="p2" className="about-subtitle">
+          <Typography type="h2" className="about-subtitle">
             Crafting user experiences with heart and code
           </Typography>
 
           <div className="about-bio">
             <Typography type="p" className="about-paragraph">
-              Hej! I’m a UX/UI designer & front-end dev who believes that
-              the best interfaces are the ones you don’t notice until they
-              delight you.
+              Hey there! I’m Emily, a soon-to-graduate master’s student in Interactive Media Technology at KTH who likes turning clunky screens into smooth, “oh-that-makes-sense” moments.
             </Typography>
             <Typography type="p" className="about-paragraph">
-              Whether I’m mapping user flows or pixel-pushing in Figma,
-              my goal is the same: turn research into interfaces that feel
-              effortless, whimsical, and unequivocally “you.”
+              When I close Figma, you’ll usually find me in one of three places:
             </Typography>
+            <ul className="about-bullet-list">
+              {bulletPoints.map((point) => (
+                <li key={point} className="about-bullet-item">
+                  <Typography type="p" className="about-paragraph">
+                    {point}
+                  </Typography>
+                </li>
+              ))}
+            </ul>
             <Typography type="p" className="about-paragraph">
-              Off-duty, I hunt for coffee-shop inspiration, sketch with
-              watercolor, or plan my next adventure, because a fresh perspective
-              is the secret to better design.
+              All those side quests teach me patience, planning, and a dash of playful chaos, which is exactly what I pour into every UX project. If you’re into crafting experiences that feel a little more human, let’s talk!
             </Typography>
           </div>
 
