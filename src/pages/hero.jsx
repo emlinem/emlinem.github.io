@@ -1,6 +1,6 @@
 import '../styles.css';
 import './hero.css';
-import Emily from '../assets/Emily.png';
+import EmilyHero from '../assets/EmilyHero.png';
 import Typography from '../components/Typography';
 
 
@@ -19,7 +19,7 @@ const Hero = () => {
                 </div>
             </div>
             <div className="hero-image">
-                <img src={Emily} alt="Emily Image" />
+                <img src={EmilyHero} alt="Emily Image" />
             </div>
         </section>
     );

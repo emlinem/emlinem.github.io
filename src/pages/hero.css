@@ -20,5 +20,5 @@
 /* Styling for image */
 .hero-image img {
     width: 400px;
-    border-radius: 50%;
+    border-radius: 0px;
 }
