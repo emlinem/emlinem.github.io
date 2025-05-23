@@ -44,12 +44,12 @@ function Resume() {
 
           <a
             className="cta-btn"
-            href="/resume.pdf"
-            download="Emily_Nilsson_Resume.pdf"
+            href="/resume.pdf" 
+            download="Emily-Nilsson-Resume.pdf"
           >
             Download Resume
           </a>
-          
+
         </div>
 
         {/* Experience Column */}
