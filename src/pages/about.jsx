@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from '../components/Typography';
 import './about.css';
-import EmilyAbout from '../assets/EmilyAbout.jpg';
+import AboutPic from '../assets/AboutPic.png';
 import { FaEnvelope } from 'react-icons/fa';
 
 export default function About() {
@@ -48,15 +48,6 @@ export default function About() {
             </Typography>
           </div>
 
-          {/* Skills */}
-          <div className="skills-list">
-            {skills.map((skill) => (
-              <Typography key={skill} type="p2" color="white" className="skill-tag">
-                {skill}
-              </Typography>
-            ))}
-          </div>
-
           {/* Call to Action: using your .cta-btn and Typography */}
           <a
             href="mailto:emily.r.nilsson@gmail.com"
@@ -71,7 +62,7 @@ export default function About() {
 
         {/* RIGHT: Image */}
         <div className="about-image">
-          <img src={EmilyAbout} alt="Portrait of Emily Nilsson" />
+          <img src={AboutPic} alt="Portrait of Emily Nilsson" />
         </div>
       </div>
     </section>
