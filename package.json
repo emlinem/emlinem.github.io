@@ -1,5 +1,5 @@
 {
-  "homepage": "https://emlinem.github.io/portfolio",
+  "homepage": "https://emlinem.github.io",
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
@@ -8,9 +8,7 @@
     "dev": "vite",
     "build": "vite build --outDir docs",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.3.1",

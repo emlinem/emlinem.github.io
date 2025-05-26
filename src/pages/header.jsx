@@ -41,6 +41,7 @@ export default function Header() {
           <li><a href="#resume">resumé</a></li>
           <li><a href="#projects">ux/ui design</a></li>
           <li><a href="#graphics">graphic design</a></li>
+          <li><a href="#tangibles">tangible design</a></li>
           <li><a href="#about">about me</a></li>
           <li><a href="#contact">socials</a></li>
         </ul>

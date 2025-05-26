@@ -7,6 +7,7 @@ import Graphics from './graphics';
 import Projects from './projects';
 import Resume from './resume';
 import About from './about';
+import Products from './products';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Resume />
             <Projects />
             <Graphics />
+            <Products />
             <About />
             <Contact />
         </Router>
