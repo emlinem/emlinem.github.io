@@ -67,19 +67,17 @@
   }
 }
 
-/* make download button size to its content */
 #resume .cta-btn {
   display: inline-block;
-  width: auto !important;   /* override any “stretch” */
-  padding: 12px 24px;       /* your preferred padding */
-  margin: 20px 0 0;         /* spacing above */
+  width: auto !important; 
+  padding: 12px 24px;     
+  margin: 20px 0 0;     
   text-align: center;
 }
 
-/* center it on small screens */
 @media (max-width: 768px) {
   #resume .cta-btn {
-    display: block;         /* so margin auto works */
+    display: block;         
     margin: 20px auto 0;
   }
 }
