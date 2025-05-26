@@ -1,28 +1,43 @@
 .simple-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  justify-content: center; 
   text-align: center;
   padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .name-year {
   font-size: 18px !important;
-  text-align: center !important;
   font-weight: bold;
   color: #282828;
-  margin-bottom: 10px;
+  margin-bottom: 16px;  
 }
 
 .social-icons {
   display: flex;
-  justify-content: center;
   gap: 20px;
 }
 
 .social-icons a {
   font-size: 24px;
   color: #282828;
-  transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, transform 0.2s ease;
 }
 
 .social-icons a:hover {
   color: #193497;
+  transform: scale(1.1);   
+}
+
+/* —— Responsiveness —— */
+@media (max-width: 480px) {
+  .name-year {
+    font-size: 16px;
+  }
+  .social-icons a {
+    font-size: 20px;
+  }
 }

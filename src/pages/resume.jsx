@@ -1,5 +1,4 @@
 // src/sections/Resume.jsx
-import React from 'react';
 import './resume.css';
 import '../styles.css';
 import Typography from '../components/Typography';
@@ -41,15 +40,6 @@ function Resume() {
               </Typography>
             </div>
           </div>
-
-          <a
-            className="cta-btn"
-            href="/resume.pdf" 
-            download="Emily-Nilsson-Resume.pdf"
-          >
-            Download Resume
-          </a>
-
         </div>
 
         {/* Experience Column */}
@@ -100,6 +90,17 @@ function Resume() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Download button now lives beneath the two‐column grid */}
+      <div className="resume-download">
+        <a
+          className="cta-btn"
+          href="/resume.pdf"
+          download="Emily-Nilsson-Resume.pdf"
+        >
+          Download Resume
+        </a>
       </div>
     </section>
   );

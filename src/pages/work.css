@@ -330,3 +330,175 @@
 .popup-links .card-link:hover {
   color: #0051a3;
 }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .work-section {
+    padding: 40px 15px;
+  }
+  .work-grid {
+    gap: 24px;
+  }
+  .work-card {
+    aspect-ratio: auto; 
+    height: auto;
+  }
+  .work-card img {
+    object-fit: cover;
+    height: auto;
+  }
+}
+
+/* Phones & small tablets */
+@media (max-width: 768px) {
+  .work-section {
+    padding: 30px 10px;
+  }
+  .work-grid {
+    grid-template-columns: 1fr; 
+    gap: 20px;
+  }
+  .work-card-container {
+    transform: none;           
+  }
+  .card-hover {
+    display: none;          
+  }
+  .popup-content {
+    flex-direction: column;    
+    height: auto;
+    max-height: 90vh;
+  }
+  .carousel-container,
+  .popup-details {
+    flex: none;
+    width: 100%;
+    padding: 16px;
+  }
+  .carousel-container {
+    order: 2;                   /* details first, then images */
+  }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  .work-section {
+    padding: 20px 8px;
+  }
+  .work-grid {
+    gap: 16px;
+  }
+  .carousel-container {
+    padding: 8px;
+  }
+  .popup-details {
+    padding: 12px;
+  }
+  .close-btn {
+    top: 8px;
+    right: 8px;
+    font-size: 1.4rem;
+  }
+}
+
+/* —— Thumbnails for extraImages —— */
+.popup-small-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px;
+  justify-content: center;
+}
+
+.popup-small-images img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.popup-small-images img:hover {
+  transform: scale(1.05);
+}
+
+/* —— On phones, stack the popup so thumbnails aren’t clipped —— */
+@media (max-width: 768px) {
+  .popup-content {
+    flex-direction: column;
+    max-height: 90vh;
+  }
+
+  .carousel-container,
+  .popup-small-images,
+  .popup-details {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+  }
+
+  /* Show thumbnails right below the main carousel */
+  .popup-small-images {
+    order: 2;
+  }
+  .popup-details {
+    order: 3;
+  }
+}
+
+/* —— Mobile popup: show carousel + thumbs + details stacked —— */
+@media (max-width: 768px) {
+  .popup-content {
+    flex-direction: column;
+    max-height: 90vh;
+    height: auto;
+  }
+  .popup-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Main carousel (or single-image) full-width, limited height */
+  .carousel-container,
+  .popup-main-image {
+    width: 100%;
+    flex: none;
+    max-height: 30vh;
+    margin-bottom: 12px;
+  }
+  .carousel-container .carousel-image,
+  .popup-main-image {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Thumbnail strip */
+  .popup-small-images {
+    order: 2;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+  .popup-small-images img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  /* Details area */
+  .popup-details {
+    order: 3;
+    width: 100%;
+    padding: 16px;
+    overflow-y: auto;
+    max-height: 50vh;
+    box-sizing: border-box;
+  }
+}

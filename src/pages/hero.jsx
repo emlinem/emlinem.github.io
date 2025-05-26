@@ -15,7 +15,7 @@ const Hero = () => {
                 <Typography type="p" color="primary">
                     Hi I'm Emily Nilsson, a passionate Front-end Developer & UI/UX Designer based in Stockholm.
                 </Typography>
-                <a href="#projects" className="cta-btn">SEE MY WORKS →</a>
+                <a href="#projects" className="cta-btn">SEE MY WORKS!</a>
                 </div>
             </div>
             <div className="hero-image">
