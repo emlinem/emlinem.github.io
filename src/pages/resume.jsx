@@ -92,12 +92,11 @@ function Resume() {
         </div>
       </div>
 
-      {/* Download button now lives beneath the two‐column grid */}
       <div className="resume-download">
         <a
           className="cta-btn"
           href="/resume.pdf"
-          download="Emily-Nilsson-Resume.pdf"
+          download="Emily Nilsson CV.pdf"
         >
           Download Resume
         </a>

@@ -20,67 +20,59 @@
   cursor: pointer;
   transform-origin: center;
 }
-
 .work-card-container:hover {
   transform: scale(1.02);
-  transition: transform 0.3s ease-in-out;
 }
-
 .work-card {
   width: 100%;
   aspect-ratio: 4 / 3;
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 .work-card img {
   width: 100%;
   height: 100%;
+  object-fit: contain;
   object-position: center;
   display: block;
-  object-fit: contain;       
-  background: #fff; 
+  background: #fff;
 }
-
 .work-card:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 /* === CARD INFO === */
 .card-info {
-  position: relative;
   padding-top: 16px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
-
 .card-info h3 {
   margin: 0 0 4px;
   font-size: 1rem;
   font-weight: 600;
   color: #111;
 }
-
 .card-info .date {
   font-size: 0.9rem;
   color: #666;
   margin-bottom: 8px;
 }
-
 .card-info p {
   font-size: 0.95rem;
   color: #444;
   margin-bottom: 16px;
   flex-grow: 1;
 }
-
 .card-links {
   display: flex;
   gap: 12px;
 }
-
 .card-link {
   font-size: 0.9rem;
   color: #0070f3;
@@ -90,11 +82,9 @@
   align-items: center;
   transition: transform 0.2s ease;
 }
-
 .card-link .arrow {
   margin-left: 4px;
 }
-
 .card-link:hover {
   transform: translateX(3px);
 }
@@ -102,7 +92,7 @@
 /* === CARD HOVER OVERLAY === */
 .card-hover {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  inset: 0;
   background: rgba(242, 237, 64, 0.95);
   display: flex;
   flex-direction: column;
@@ -114,18 +104,15 @@
   pointer-events: none;
   z-index: 2;
 }
-
 .work-card-container:hover .card-hover {
   opacity: 1;
 }
-
 .hover-title {
   font-size: 1.6rem;
   font-weight: bold;
   color: #282828;
   margin-bottom: 0.5rem;
 }
-
 .hover-desc {
   font-size: 0.95rem;
   color: #282828;
@@ -135,9 +122,7 @@
 /* === POPUP OVERLAY === */
 .popup-overlay {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
@@ -145,10 +130,9 @@
   z-index: 1000;
   animation: fadeInOverlay 0.25s ease-out;
 }
-
 @keyframes fadeInOverlay {
-  from { background: rgba(0, 0, 0, 0); }
-  to   { background: rgba(0, 0, 0, 0.6); }
+  from { background: rgba(0,0,0,0); }
+  to   { background: rgba(0,0,0,0.6); }
 }
 
 /* === POPUP CONTENT === */
@@ -160,11 +144,10 @@
   height: 95vh;
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.3);
   overflow: hidden;
   animation: fadeInContent 0.25s ease-out;
 }
-
 .popup-inner {
   display: flex;
   width: 100%;
@@ -184,7 +167,6 @@
   padding: 4px;
   z-index: 2;
 }
-
 .close-btn:hover {
   color: #000;
 }
@@ -198,27 +180,23 @@
   background: #fafafa;
   position: relative;
 }
-
 .carousel-image {
-  max-height: 85vh;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   animation: fadeIn 0.4s ease-in-out;
 }
-
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
-
 .carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0,0,0,0.2);
   border: none;
-  width: 36px;
-  height: 36px;
+  width: 36px; height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -226,17 +204,13 @@
   font-size: 20px;
   cursor: pointer;
   transition: transform 0.2s ease;
-  -webkit-tap-highlight-color: transparent;
 }
-
 .carousel-btn.prev { left: 12px; }
 .carousel-btn.next { right: 12px; }
-
 .carousel-btn:hover {
   transform: translateY(-50%) scale(1.1);
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0.6);
 }
-
 .carousel-btn:disabled {
   opacity: 0.3;
   cursor: default;
@@ -252,22 +226,20 @@
   gap: 8px;
   z-index: 2;
 }
-
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 10px; height: 10px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0,0,0,0.3);
   cursor: pointer;
   transition: background 0.2s;
 }
-
 .dot.active {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0,0,0,0.8);
 }
 
 /* === DETAILS COLUMN === */
 .popup-details {
+  flex: 1;
   display: flex;
   flex-direction: column;
   padding: 32px;
@@ -275,23 +247,18 @@
   overflow-y: auto;
   box-sizing: border-box;
 }
-
 .popup-details h2 {
   margin: 0;
   font-size: 2rem;
   font-weight: bold;
   color: #222;
 }
-
 .popup-details .date {
-  margin: 0;
   font-size: 0.9rem;
   font-style: italic;
   color: #666;
 }
-
 .popup-details p {
-  margin: 0;
   font-size: 1rem;
   line-height: 1.6;
   color: #333;
@@ -303,7 +270,6 @@
   flex-wrap: wrap;
   gap: 8px;
 }
-
 .tool-tag {
   padding: 6px 12px;
   background: #f0f0f0;
@@ -312,13 +278,11 @@
   font-size: 0.85rem;
   color: #555;
 }
-
 .popup-links {
   margin-top: auto;
   display: flex;
   gap: 16px;
 }
-
 .popup-links .card-link {
   font-size: 0.95rem;
   font-weight: 500;
@@ -326,163 +290,71 @@
   text-decoration: none;
   transition: color 0.2s;
 }
-
 .popup-links .card-link:hover {
   color: #0051a3;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 1024px) {
-  .work-section {
-    padding: 40px 15px;
-  }
-  .work-grid {
-    gap: 24px;
-  }
-  .work-card {
-    aspect-ratio: auto; 
-    height: auto;
-  }
-  .work-card img {
-    object-fit: contain;
-    height: auto;
-  }
-}
-
-/* Phones & small tablets */
+/* ===== RESPONSIVE: ≤768px ===== */
 @media (max-width: 768px) {
   .work-section {
     padding: 30px 10px;
   }
   .work-grid {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     gap: 20px;
   }
   .work-card-container {
-    transform: none;           
+    transform: none;
   }
   .card-hover {
-    display: none;          
+    display: none;
   }
-  .popup-content {
-    flex-direction: column;    
-    height: auto;
-    max-height: 90vh;
-  }
-  .carousel-container,
-  .popup-details {
-    flex: none;
-    width: 100%;
-    padding: 16px;
-  }
-  .carousel-container {
-    order: 2;                   /* details first, then images */
-  }
-}
 
-/* Very small phones */
-@media (max-width: 480px) {
-  .work-section {
-    padding: 20px 8px;
+  /* fix card height */
+  .work-card {
+    height: 250px;
+    max-height: 250px;
+    aspect-ratio: unset;
   }
-  .work-grid {
-    gap: 16px;
+  .work-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
   }
-  .carousel-container {
-    padding: 8px;
-  }
-  .popup-details {
-    padding: 12px;
-  }
-  .close-btn {
-    top: 8px;
-    right: 8px;
-    font-size: 1.4rem;
-  }
-}
 
-/* —— Thumbnails for extraImages —— */
-.popup-small-images {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 16px;
-  justify-content: center;
-}
-
-.popup-small-images img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.popup-small-images img:hover {
-  transform: scale(1.05);
-}
-
-/* —— On phones, stack the popup so thumbnails aren’t clipped —— */
-@media (max-width: 768px) {
+  /* stack popup & lock carousel height */
   .popup-content {
     flex-direction: column;
-    max-height: 90vh;
-  }
-
-  .carousel-container,
-  .popup-small-images,
-  .popup-details {
-    width: 100%;
-    padding: 12px;
-    box-sizing: border-box;
-  }
-
-  /* Show thumbnails right below the main carousel */
-  .popup-small-images {
-    order: 2;
-  }
-  .popup-details {
-    order: 3;
-  }
-}
-
-/* —— Mobile popup: show carousel + thumbs + details stacked —— */
-@media (max-width: 768px) {
-  .popup-content {
-    flex-direction: column;
-    max-height: 90vh;
+    max-height: 80vh;
     height: auto;
   }
-  .popup-inner {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* Main carousel (or single-image) full-width, limited height */
   .carousel-container,
   .popup-main-image {
-    width: 100%;
     flex: none;
-    max-height: 30vh;
-    margin-bottom: 12px;
+    width: 100%;
+    height: 200px;
+    max-height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .carousel-container .carousel-image,
   .popup-main-image {
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
-    width: 100%;
-    height: 100%;
   }
 
-  /* Thumbnail strip */
+  /* thumbnails below main image */
   .popup-small-images {
     order: 2;
     width: 100%;
+    padding: 12px;
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     justify-content: center;
-    margin-bottom: 12px;
   }
   .popup-small-images img {
     width: 60px;
@@ -492,26 +364,78 @@
     cursor: pointer;
   }
 
-  /* Details area */
+  /* details last */
   .popup-details {
     order: 3;
     width: 100%;
     padding: 16px;
-    overflow-y: auto;
     max-height: 50vh;
-    box-sizing: border-box;
   }
 }
 
-@media (max-width: 768px) {
-  .work-card {
-    max-height: 300px;     
-    height: 300px;
-    aspect-ratio: unset;   
+/* ===== VERY SMALL PHONES ≤480px ===== */
+@media (max-width: 480px) {
+  .work-section {
+    padding: 20px 8px;
   }
-  .work-card img {
+  .popup-small-images img {
+    width: 50px;
+    height: 50px;
+  }
+  .close-btn {
+    top: 8px;
+    right: 8px;
+    font-size: 1.4rem;
+  }
+}
+
+/* ===== MOBILE POPUP FIX (≤768px) ===== */
+@media (max-width: 768px) {
+  .popup-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
     width: 100%;
-    height: 100%;        
-    object-fit: contain;   
+    height: auto;
+  }
+
+  .popup-details {
+    order: 3;               
+    width: 100%;
+    padding: 16px;
+    max-height: 40vh;     
+    overflow-y: auto;
+    display: flex;           
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  .carousel-container,
+  .popup-main-image {
+    order: 1;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .popup-small-images {
+    order: 2;
+    width: 100%;
+    padding: 12px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .carousel-container .carousel-image,
+  .popup-main-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
   }
 }
