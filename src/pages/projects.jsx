@@ -132,9 +132,13 @@ const [selectedProject, setSelectedProject] = useState(null);
                   </Typography>
                 )}
 
-                <Typography type="p" color="primary">
-                  {selectedProject.details || selectedProject.description}
-                </Typography>
+                {(selectedProject.details || selectedProject.description)
+                  .split('\n\n')
+                  .map((paragraph, idx) => (
+                    <Typography key={idx} type="p" color="primary" style={{ marginBottom: '1em' }}>
+                      {paragraph}
+                    </Typography>
+                  ))}
 
                 {selectedProject.tools && (
                   <>
