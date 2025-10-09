@@ -1,7 +1,7 @@
 import React from 'react';
 import './Typography.css';
 
-function Typography({ type = 'p', color = 'black', children, className }) {
+function Typography({ type = 'p', color = 'black', children, className, bold = false }) {
     let Tag = 'p'; // Default tag
 
     // Handle different types of text components
@@ -11,7 +11,7 @@ function Typography({ type = 'p', color = 'black', children, className }) {
         Tag = type; // h1, h2, h3, etc.
     }
 
-    const classes = `typography ${type} ${color} ${className || ''}`.trim();
+    const classes = `typography ${type} ${color} ${bold ? 'bold' : ''} ${className || ''}`.trim();
 
     return <Tag className={classes}>{children}</Tag>;
 }

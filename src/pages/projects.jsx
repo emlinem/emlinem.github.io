@@ -1,13 +1,19 @@
 // src/sections/Projects.jsx
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Typography from '../components/Typography';
 import './work.css';
 import projectsData from './projectsData';
+import Spacer from '../components/Spacer';
 
-export default function Projects() {
-const [selectedProject, setSelectedProject] = useState(null);
+export default function Projects({ showAll = false }) {
+  const [selectedProject, setSelectedProject] = useState(null);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [carouselIndex, setCarouselIndex] = useState(0);
+  const navigate = useNavigate();
+
+  // Show only top 3 unless showAll is true
+  const displayedProjects = showAll ? projectsData : projectsData.slice(0, 3);
 
   const handleCardClick = (project) => {
     setScrollPosition(window.scrollY);
@@ -28,12 +34,27 @@ const [selectedProject, setSelectedProject] = useState(null);
         UX/UI Design
       </Typography>
 
+      <div className="cta-intro-flex">
+        <div className="cta-intro-text">
+          <Typography type="p" color="primary">
+            UX and UI design let me merge my love for problem-solving with creativity and empathy. Every project is a new chance to see the world through someone else’s eyes. Here are a few of my favorite projects!
+          </Typography>
+        </div>
+        <Spacer size="12em" vertical={false} />
+        <button
+          className="cta-btn"
+          onClick={() => navigate('/uxui-projects')}
+        >
+          See more
+        </button>
+      </div>
+
       <div className="work-grid">
-        {projectsData.map((work) => (
+        {displayedProjects.map((work) => (
           <div
             key={work.id}
             className="work-card-container"
-            onClick={() => handleCardClick(work)}
+            onClick={() => navigate(`/project/${work.id}`)}
           >
             <div className="work-card">
               <img src={work.img} alt={work.name} />

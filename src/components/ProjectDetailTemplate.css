@@ -1,0 +1,192 @@
+.project-detail-container {
+  max-width: 1100px;
+  margin: 100px auto;
+  padding: 0 40px 120px;
+  background-color: #fff;
+  color: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.75;
+}
+
+.project-header {
+  margin-bottom: 100px;
+  text-align: left;
+}
+
+.project-title {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 0.4em;
+}
+
+.project-meta {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.8em;
+}
+
+.project-shortdesc {
+  font-size: 1.2rem;
+  color: #333;
+  max-width: 600px;
+  margin-top: 0.5em;
+}
+
+.project-hero {
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+.project-hero-image {
+  width: 100%;
+  object-fit: cover;
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* ---- Alternating Sections ---- */
+.project-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: 120px;
+}
+
+/* No-image layout (now multi-column) */
+.project-section.single-column {
+  flex-direction: column;
+  text-align: left;
+  max-width: 900px;
+  margin: 0 auto 120px auto;
+  column-count: 2;
+  column-gap: 60px;
+  column-fill: balance;
+}
+
+.project-section.single-column .section-text {
+  max-width: 100%;
+  width: 100%;
+}
+
+/* Make sure headings span both columns */
+.project-section.single-column h2,
+.project-section.single-column .typography.h2 {
+  column-span: all;
+  margin-bottom: 1.5em;
+}
+
+/* Make paragraphs flow naturally between columns */
+.project-section.single-column p,
+.project-section.single-column .typography.p {
+  break-inside: avoid;
+  margin-bottom: 1.4em;
+  font-size: 1.1rem;
+  line-height: 1.85;
+}
+
+/* Responsive: revert to single column */
+@media (max-width: 900px) {
+  .project-section.single-column {
+    column-count: 1;
+    column-gap: 0;
+  }
+}
+
+.project-section.single-column {
+  flex-direction: column;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 120px auto;
+}
+
+.section-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.section-images {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.section-image {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.section-image:hover {
+  transform: scale(1.01);
+}
+
+/* Alternate layout visually */
+.left-text .section-text {
+  order: 1;
+  text-align: left;
+}
+.left-text .section-images {
+  order: 2;
+}
+.right-text .section-text {
+  order: 2;
+  text-align: right;
+}
+.right-text .section-images {
+  order: 1;
+}
+
+/* ---- Typography ---- */
+.project-section h2,
+.project-section .typography.h2 {
+  font-size: 1.4rem;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}
+
+.project-section p,
+.project-section .typography.p {
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  margin-bottom: 1em;
+  line-height: 1.8;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .project-detail-container {
+    padding: 0 20px 80px;
+  }
+
+  .project-title {
+    font-size: 2.2rem;
+  }
+
+  .project-section {
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 80px;
+  }
+
+  .section-text {
+    text-align: left !important;
+    max-width: 100%;
+  }
+
+  .section-images {
+    max-width: 100%;
+  }
+
+  .section-image {
+    max-width: 100%;
+  }
+}

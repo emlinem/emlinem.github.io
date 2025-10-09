@@ -62,3 +62,7 @@
 .typography.white {color: #f9f6ef;}
 .typography.black {color: #282828;
 }
+
+.bold {
+  font-weight: 700;
+}
